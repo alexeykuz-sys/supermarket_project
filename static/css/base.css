@@ -1,0 +1,14 @@
+html {
+  height: 100%;
+}
+
+body {
+  font-family: "Lato";
+}
+
+.top-image {
+  background: url("/media/pics/supermarket.jpg") no-repeat center center;
+  background-size: cover;
+  height: 55vh;
+  color: white;
+}
