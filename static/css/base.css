@@ -9,12 +9,12 @@ body {
 /* Navbar */
 .navbar {
     width: 100%;
-    height: 10rem;
+    height: 8rem;
     border: 2px solid rebeccapurple;
 }
 .main-logo-link .logo {
-    width:10rem;
-    height: 10rem;
+    width:3rem;
+    height: 3rem;
 }
 
 /* Hero image */

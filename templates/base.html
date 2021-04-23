@@ -35,7 +35,7 @@
     <title>Fast and Fresh {% block extra_title %}{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
           <img
@@ -134,16 +134,16 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
-    <!-- <header class="container-fluid fixed-top navbar">
+    <header class="container fixed-top">
       <div class="row">
-        <div class="col-12 col-lg-4">
-          <a href="{% url 'home' %}" class="nav-link main-logo-link">
-            <img class='logo' src="/media/pics/logo.png" alt="logo-image" srcset="" />
+        <div class="col-sm-12 col-md-2">
+          <a href="{% url 'home' %}" class="main-logo-link">
+            <img class='logo' src="/media/pics/logo.png" alt="logo-image" />
           </a>
         </div>
-        <div class="col-12 col-lg-4">
+        <div class="col-sm-12 col-md-6">
           <form method="GET" action="{% url 'products' %}">
             <div class="input-group w-100">
               <input
@@ -165,7 +165,7 @@
             </div>
           </form>
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-sm-12 col-md-4">
           <ul class="list-inline list-unstyled text-center text-lg-right my-0">
               <li class="list-inline-item dropdown">
                   <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -204,7 +204,7 @@
           </ul>
         </div>
       </div>
-    </header> -->
+    </header>
 
     {% if messages %}
     <div class="message-container"></div>
