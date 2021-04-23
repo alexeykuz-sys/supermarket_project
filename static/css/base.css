@@ -6,6 +6,19 @@ body {
   font-family: "Lato";
 }
 
+/* Navbar */
+.navbar {
+    width: 100%;
+    height: 10rem;
+    border: 2px solid rebeccapurple;
+}
+.main-logo-link .logo {
+    width:10rem;
+    height: 10rem;
+}
+
+/* Hero image */
+
 .top-image {
   background: url("/media/pics/supermarket.jpg") no-repeat center center;
   background-size: cover;
