@@ -4,9 +4,11 @@ html {
 
 body {
   font-family: "Lato";
-
+  height: calc(100vh - 164px);
 }
 
+
+/* Buttons settings */
 /* from Bulma */
 .icon {
     align-items: center;
@@ -67,10 +69,6 @@ body {
 .remove-item {
     cursor: pointer;
 }
-
-
-
-
 
 /* Navbar */
 
@@ -175,4 +173,22 @@ input[name='q']::placeholder {
     font-size: 3rem;
     margin-bottom: 30px;
 
+}
+
+
+/* Products page */
+
+
+.products-container {
+    padding-top: 164px;
+}
+
+.card{
+    width: 15rem;
+    height: 27rem;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 70%;
 }
