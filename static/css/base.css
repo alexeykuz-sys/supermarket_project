@@ -87,7 +87,9 @@ input[name='q']::placeholder {
     color: #aab7c4;
 }
 
-
+#delivery-banner {
+  background-color: #1d7ba9;
+}
 /* Hero image */
 
 .top-image {
@@ -113,7 +115,7 @@ input[name='q']::placeholder {
   z-index: 99;
 }
 
-.login-card .card {
+.login-card .card-wrapper {
   width: 23rem;
   height: 22rem;
   display: flex;
@@ -128,39 +130,40 @@ input[name='q']::placeholder {
     rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
 }
 
-.login-card .card .card-text {
+.login-card .card-wrapper .card-text {
   position: absolute;
 }
 
-.login-card .card .card-img-top {
+.login-card .card-wrapper .card-img-top {
   height: 60%;
   width: 60%;
   top: 0;
 }
 
-.login-card .card .card-body {
+.login-card .card-wrapper .card-body {
   display: flex;
   flex-direction: column;
   width: 100%;
 }
 
 
-.login-card .card a {
+.login-card .card-wrapper .login-link {
    padding-bottom: 10px;
    text-decoration: none;
-   color: #1d7ba9;
+   background-color: #1d7ba9;
    cursor: pointer;
+   color: rgb(255, 255, 255);
   }
 
 
-.login-card .card .card-body .btn {
+.login-card .card-wrapper .card-body .btn {
   margin: 5px;
   background-color: #1d7ba9;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 }
 
-.login-card .card .card-body .btn a {
+.login-card .card-wrapper .card-body .btn .register-link {
   color: rgb(255, 255, 255);
   font-size: 18px;
   text-decoration: none;
@@ -180,15 +183,41 @@ input[name='q']::placeholder {
 
 
 .products-container {
-    padding-top: 164px;
+    padding-top: 170px;
 }
 
-.card{
-    width: 15rem;
-    height: 27rem;
+.product-card{
+    width: 275px;
+    height: 430px;
+    padding: 10px;
+    margin: 20px auto;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
 }
 
-.card-img-top {
-  width: 100%;
-  height: 70%;
+.product-card .card-img-top,
+.product-card .product-image-link {
+  height: 250px;
+  width: 250px;
+}
+
+.product-name {
+  font-size: 14px;
+    font-weight: normal;
+    color: rgb(51, 51, 51);
+}
+
+.product-price{
+  font-size: 16px;
+}
+
+.add-btn{
+  background-color: #1d7ba9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  cursor: pointer;
+  border-radius: 5px;
+  
+}
+.add-btn .add-link{
+  color: white;
+  text-decoration: none;
 }

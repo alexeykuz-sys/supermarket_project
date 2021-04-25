@@ -7,18 +7,18 @@
             <div class="col-12 col-md-12">
                 <div class="top-image"></div>
                 <div class="login-card">
-                    <div class="card" style="width: 18rem;">
+                    <div class="card card-wrapper" style="width: 18rem;">
                         <img src="/media/pics/logo.png" class="card-img-top" alt="...">
                         <span class="card-text">Groceries in a jiffy.</span>
                         <div class="card-body">
                             <button class="btn login-btn btn-outline-primary" role="button" type="submit">
-                                <a href="{% url 'account_login' %}">Login</a>
+                                <a class="login-link" href="{% url 'account_login' %}">Login</a>
                             </button>
                             <button class="btn register-btn btn-outline-primary" role="button" type="submit">
-                            <a href="{% url 'account_signup' %}">Register</a>
+                            <a class="register-link" href="{% url 'account_signup' %}">Register</a>
                             </button>
                         </div>
-                        <a href="{% url 'products' %}">Browse the shop</a>
+                        <a class="shop-link text-center mb-3" href="{% url 'products' %}">Browse the shop</a>
                       </div>
                 </div>
             </div>
