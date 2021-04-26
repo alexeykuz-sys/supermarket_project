@@ -72,11 +72,11 @@ body {
 
 /* Navbar */
 
-
-.main-logo-link .logo {
-    width:3rem;
+#topnav{
+  background-color: #c0c650;
+}
+.main-logo-link .logo-nav {
     height: 3rem;
-    margin: 5px;
 }
 
 
@@ -109,15 +109,15 @@ input[name='q']::placeholder {
 .login-card {
   /* display: flex; */
   position: absolute;
-  top: 30%;
+  top: 25%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 99;
 }
 
-.login-card .card-wrapper {
+.card-wrapper {
   width: 23rem;
-  height: 22rem;
+  height: 25rem;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -134,9 +134,9 @@ input[name='q']::placeholder {
   position: absolute;
 }
 
-.login-card .card-wrapper .card-img-top {
-  height: 60%;
-  width: 60%;
+.card-wrapper .login-img-top {
+  height: 50%;
+  width: 50%;
   top: 0;
 }
 
@@ -182,13 +182,14 @@ input[name='q']::placeholder {
 /* Products page */
 
 
-.products-container {
+.products-container,
+.product-container {
     padding-top: 170px;
 }
 
 .product-card{
-    width: 275px;
-    height: 430px;
+    width: 315px;
+    height: 530px;
     padding: 10px;
     margin: 20px auto;
     box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px, rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
@@ -201,8 +202,8 @@ input[name='q']::placeholder {
 }
 
 .product-name {
-  font-size: 14px;
-    font-weight: normal;
+  font-size: 15px;
+    font-weight: bold;
     color: rgb(51, 51, 51);
 }
 
@@ -220,4 +221,23 @@ input[name='q']::placeholder {
 .add-btn .add-link{
   color: white;
   text-decoration: none;
+}
+
+/* Individual products page */
+
+.browse-products {
+  font-size: 15px;
+  font-weight: normal;
+  padding-top: 20px;
+}
+
+.product-name {
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 1.2px;
+  /* padding: 10px; */
+}
+
+.product-details-wrapper i{
+  padding-top: 5px;
 }

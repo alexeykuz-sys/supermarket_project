@@ -1,10 +1,75 @@
 {% extends "base.html" %} 
 {% load static %} 
-
 {% block page_header %} 
+
 {% include 'includes/navbar.html'%} 
 {% endblock %} 
 
 {% block content %}
 
-{% endblock %}
+<div class="container product-container">
+  <div class="row">
+    
+    <div class="col-sm-12 col-md-3 offset-md-1">
+      {% if product.image %}
+      <a href="{% url 'product_detail' product.id %}">
+        <img
+          class="product-img-top"
+          src="{{ product.image.url }}"
+          alt="{{ product.name }}"
+        />
+      </a>
+      {% else %}
+      <a href="{% url 'product_detail' product.id %}">
+        <img
+          class="product-img-top"
+          src="{{ MEDIA_URL }}noimage.png"
+          alt="{{ product.name }}"
+        />
+      </a>
+      {% endif %}
+      <a href="{% url 'products' %}">
+        <p class="browse-products">Browse for similar products</p>
+      </a>
+    </div>
+    <div class="col-sm-12 col-md-6 ">
+        <div class="product-details-container">
+          <p class=" product-name mb-0">{{ product.name }}</p>
+        </div>
+    
+        <div class="product-details-wrapper my-5">
+          <p class="lead mb-0 text-left font-weight-bold">
+            £{{ product.price }}
+          </p>
+          {% if product.category %}
+          <p class="small mt-1 mb-0">
+            <a
+              class="text-muted"
+              href="{% url 'products' %}?category={{ product.category.name }}"
+            >
+              <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name}}
+            </a>
+          </p>
+          {% endif %} {% if product.rating %}
+          <small class="text-muted"
+            ><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small
+          >
+          {% else %}
+          <small class="text-muted">No Rating</small>
+          {% endif %} {% if request.user.is_superuser %}
+          <small class="ml-3">
+            <a href="">Edit</a> |
+            <a class="text-danger" href="">Delete</a>
+          </small>
+          {% endif %}
+        </div>
+        <button class="btn add-btn" role="button" type="submit">
+            <a class="add-link" href="">ADD</a>
+        </button>
+        <div class="product-description mb-5 mt-md-5">
+            <p class="mb-0">{{ product.description }}</p>
+        </div>
+    </div>
+  </div>
+</div>
+  {% endblock %}

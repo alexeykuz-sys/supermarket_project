@@ -1,11 +1,11 @@
-<header class="container fixed-top header-container">
-    <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+<header class="container-fluid fixed-top header-container">
+    <div id="topnav" class=" row pt-lg-2 d-lg-flex">
         <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-start">
             <a href="{% url 'home' %}" class="nav-link main-logo-link">
-                <img class='logo' src="/media/pics/logo.png" alt="logo-image" />
+                <img class='logo' src="/media/pics/logo-nav2.png" alt="logo-image" />
             </a>
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-12 col-lg-4 my-auto d-none d-lg-block py-1 py-lg-0">
             <form method="GET" action="{% url 'products' %}">
                 <div class="input-group w-100">
                     <input class="form-control border border-dark start-rounded-2" type="text" name="q" placeholder="Search our site">
@@ -19,7 +19,7 @@
                 </div>
             </form>
         </div>
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+        <div class="col-12 col-lg-4 my-auto d-none d-lg-block   py-1 py-lg-0">
             <ul class="list-inline list-unstyled text-center text-lg-end my-0">
                 <li class="list-inline-item dropdown">
                     <a class="text-dark nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -41,7 +41,7 @@
                         {% endif %}
                     </div>
                 </li>
-                <li class="list-inline-item">
+                <li class="list-inline-item me-5">
                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link" href="">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -68,11 +68,11 @@
         </nav>
     </div>
     
-        <div id="delivery-banner" class="row text-center">
-            <div class="col text-white">
-                <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
-            </div>            
-        </div>
+            <!-- <div id="delivery-banner" class="row text-center">
+                <div class="col text-white">
+                    <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
+                </div>            
+            </div> -->
     
 </header>
 {% if messages %}
