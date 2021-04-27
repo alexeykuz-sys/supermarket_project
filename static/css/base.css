@@ -56,12 +56,38 @@ body {
     background: #000 !important;
 }
 
-.btt-button {
-    height: 42px;
-    width: 42px;
-    position: fixed;
-    bottom: 10px;
-    right: 10px;
+.btt-wrapper {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  z-index: 102;
+}
+
+#btt-button {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border-radius: 4px;
+  border: 1px solid rgb(207, 207, 207);
+  /* display: none; */
+  font-size: 15px;
+  justify-content: space-around;
+  -webkit-box-align: center;
+  align-items: center;
+  font-weight: 600;
+  height: 40px;
+  line-height: 40px;
+  padding: 0px 10px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+  white-space: nowrap;
+  overflow: hidden;
+  background-color: white;
+  color: #000;
+}
+#btt-button:hover{
+  background-color:rgb(230, 225, 225);
+  color: rgb(0, 60, 83);
 }
 
 .btt-link,
@@ -147,26 +173,28 @@ input[name='q']::placeholder {
 }
 
 
-.login-card .card-wrapper .login-link {
+/* .login-card .card-wrapper .login-link {
    padding-bottom: 10px;
    text-decoration: none;
    background-color: #1d7ba9;
    cursor: pointer;
-   color: rgb(255, 255, 255);
-  }
-
-
-.login-card .card-wrapper .card-body .btn {
+  } */
+  
+  
+  .register-btn,
+  .login-btn {
+  color: rgb(255, 255, 255);
   margin: 5px;
   background-color: #1d7ba9;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
 }
 
-.login-card .card-wrapper .card-body .btn .register-link {
+.register-btn:hover,
+.login-btn:hover {
   color: rgb(255, 255, 255);
-  font-size: 18px;
-  text-decoration: none;
+  zoom: 1.1;
+  text-transform: uppercase;
 }
 
 /* Bottom of landing page */
@@ -183,7 +211,8 @@ input[name='q']::placeholder {
 
 
 .products-container,
-.product-container {
+.product-container,
+.bag-container {
     padding-top: 170px;
 }
 

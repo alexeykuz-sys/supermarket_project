@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% load static %} 
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%} 
+{% endblock %} 
+
+{% block content %}
+
+<div class="container bag-container me-5">
+    <div class="row">
+        <div class="col">
+            <h2>Your Basket</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            {% if bag_items %}
+                <div class="table-responsive rounded"></div>
+            {% else %}
+                <p class="bg-danger mt-5 py-2"><span class="icon"><i class="fas fa-chevron-left"></i></span>You currently have no items in your shopping basket</p>
+                
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock %} 

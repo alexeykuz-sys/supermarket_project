@@ -8,8 +8,8 @@
 {% block content %}
 <div class="container products-container">
   <div class="row">
-    <div class="product-container col-10 offset-1">
-        <div class="row mt-1 mb-2">
+    <!-- <div class="product-container col-10 offset-1">
+        <div class="row mt-1 mb-2"> -->
             <div class="col-12 col-md-6 my-auto order-md-last d-flex justify-content-center justify-content-md-end">
                 <div class="sort-select-wrapper w-50">
                     <select id="sort-selector" class="custom-select custom-select-sm rounded-0 border border-{% if current_sorting != 'None_None' %}info{% else %}black{% endif %}">
@@ -33,8 +33,8 @@
                     {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
                 </p>
             </div>
-        </div>
-      </div>
+        <!-- </div>
+      </div> -->
   </div>  
   <div class="row">
     {% for product in products %}
@@ -113,4 +113,51 @@
     {% endfor %}
   </div>
 </div>
+<div class="btt-wrapper">
+  <button class="btt-button" onclick="topFunction()" id="btt-button" title="Go to top">Back to Top</button>
+</div>
+{% endblock %}
+
+
+{% block postloadjs %}
+    {{ block.super }}
+    <script type="text/javascript">
+      bttButton = document.getElementById("btt-button");
+      window.onscroll = function() {scrollFunction()};
+
+      function scrollFunction() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+          bttButton.style.display = "block";
+          
+        } else {
+          bttButton.style.display = "none";
+        }
+      }
+      function topFunction() {
+        document.body.scrollTop = 0; // For Safari
+        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+      }
+	  </script>
+    <script type="text/javascript">
+      $('#sort-selector').change(function() {
+          var selector = $(this);
+          var currentUrl = new URL(window.location);
+
+          var selectedVal = selector.val();
+          if(selectedVal != "reset"){
+              var sort = selectedVal.split("_")[0];
+              var direction = selectedVal.split("_")[1];
+
+              currentUrl.searchParams.set("sort", sort);
+              currentUrl.searchParams.set("direction", direction);
+
+              window.location.replace(currentUrl);
+          } else {
+              currentUrl.searchParams.delete("sort");
+              currentUrl.searchParams.delete("direction");
+
+              window.location.replace(currentUrl);
+          }
+      })
+    </script>
 {% endblock %}
