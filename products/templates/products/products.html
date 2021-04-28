@@ -87,10 +87,14 @@
               {% endif %}
             </div>
           </div>
-        </div>
-        <button class="btn add-btn" role="button" type="submit">
-            <a class="add-link" href="">ADD</a>
-        </button>
+          <form class="form" action="{% url 'add_to_bag' product.id %}" id="form1" method="POST">
+            {% csrf_token %}
+            <button type="submit" name="quantity" class="btn add-btn" form="form1" value="1">Add to Basket</button>
+              <!-- <input type="submit" name="quantity" class="btn add-btn" value="1"> -->
+          </div>
+          <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </form>
+      
       </div>
     </div>
     <!-- {% if forloop.counter|divisibleby:1 %}

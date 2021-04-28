@@ -2,27 +2,152 @@
 {% load static %} 
 
 {% block page_header %} 
-{% include 'includes/navbar.html'%} 
+{% include 'includes/navbar.html'%}
+
 {% endblock %} 
 
 {% block content %}
 
-<div class="container bag-container me-5">
-    <div class="row">
-        <div class="col">
-            <h2>Your Basket</h2>
+    <div class="container bag-container me-5">
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                <hr />
+                    <h2 class="logo-font mb-4">Shopping Basket</h2>
+                <hr />
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col">
-            {% if bag_items %}
-                <div class="table-responsive rounded"></div>
-            {% else %}
-                <p class="bg-danger mt-5 py-2"><span class="icon"><i class="fas fa-chevron-left"></i></span>You currently have no items in your shopping basket</p>
-                
-            {% endif %}
-        </div>
-    </div>
-</div>
 
+        <div class="row">
+            <div class="col-sm-12 col-md-6">
+                {% if bag_items %}
+                    {% for item in bag_items %}
+                        <div class="card bag-card border-1">
+                            <div class="bag-image-wrapper">
+                                {% if item.product.image %}
+                                <a href="">
+                                <img
+                                    class="card-img-top"
+                                    src="{{ item.product.image.url }}"
+                                    alt="{{ item.product.name }}"
+                                />
+                                </a>
+                                {% else %}
+                                <a href="">
+                                <img
+                                    class="card-img-top"
+                                    src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.product.name }}"
+                                />
+                                </a>
+                                {% endif %}
+                            </div>
+                            <div class="bag-card-wrapper">
+                                <div class="card-body bag-card-body">
+                                    <p class="bag-product-name">{{ item.product.name }}</p>
+                                </div>
+                                <div class="bag-card-footer ">
+                                    <!-- <div class="row">
+                                        <div class="col-12"> -->
+                                            <p class=" product-price">£{{ item.product.price }}</p>
+                                            <form class="form update-form" method="POST" action="">
+                                                {% csrf_token %}
+                                                <div class="form-group bag-card-form">
+                                                    <div class="input-group">
+                                                        <div class="input-group-prepend">
+                                                            <button class="decrement-qty btn btn-sm btn-dark rounded-0" 
+                                                                data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                                <span>
+                                                                    <i class="fas fa-minus fa-sm"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        <input class="form-control form-control-sm qty_input" type="number"
+                                                            name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                            data-item_id="{{ item.item_id }}"
+                                                            id="id_qty_{{ item.item_id }}">
+                                                        <div class="input-group-append">
+                                                            <button class="increment-qty btn btn-sm btn-dark rounded-0"
+                                                                data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                                <span>
+                                                                    <i class="fas fa-plus fa-sm"></i>
+                                                                </span>
+                                                            </button>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div>
+                                            </form>
+                                            <!-- </div>
+                                            </div> -->
+                                        </div>
+                                        <a class="update-link text-info "><small>Update</small></a>
+                                        <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}" data-product_size="{{ item.size }}"><small>Remove</small></a>
+                            </div>
+                        </div>
+                    {% endfor %}            
+                {% endif %}
+            </div>
+            <div class="col-sm-12 col-md-6">
+                <div class="card checkout-card">
+                    <div class="card-header checkout-card-header text-center fs-2 fw-bold">Summary</div>
+                    <div class="card-body checkout-card-body text-end">
+                        <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
+                        <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
+                        <h4 class="mt-4">
+                        <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
+                        </h4>
+                        {% if free_delivery_delta > 0 %}
+                        <p class="mb-1 text-danger">
+                        You could get free delivery by spending just
+                        <strong>${{ free_delivery_delta }}</strong> more!
+                        </p>
+                        {% endif %}
+                    </div>
+                    <div class="card-footer checkout-card-footer">
+                        <!-- <a
+                        href="{% url 'products' %}"
+                        class="btn btn-outline-dark rounded-0 btn-sm"
+                        >
+                        <span class="icon">
+                            <i class="fas fa-chevron-left"></i>
+                        </span>
+                        <span class="text-uppercase">Keep Shopping</span>
+                        </a> -->
+                        <a href="" class="btn checkout-card-btn">
+                        <span class="text">Secure Checkout</span>
+                        <span class="icon">
+                            <i class="fas fa-lock"></i>
+                        </span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 {% endblock %} 
+
+  {% block postloadjs %} 
+  {{ block.super }}
+
+  <script type="text/javascript">
+    // Update quantity on click
+    $(".update-link").click(function (e) {
+      var form = $(this).prev(".update-form");
+      form.submit();
+    });
+
+    // Remove item and reload on click
+    $(".remove-item").click(function (e) {
+      var csrfToken = "{{ csrf_token }}";
+      var itemId = $(this).attr("id").split("remove_")[1];
+      var url = `/bag/remove/${itemId}/`;
+      var data = { csrfmiddlewaretoken: csrfToken, product_size: size };
+
+      $.post(url, data).done(function () {
+        location.reload();
+      });
+    });
+  </script>
+
+  {% endblock %}
+
