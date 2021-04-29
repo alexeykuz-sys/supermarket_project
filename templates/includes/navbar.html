@@ -42,6 +42,7 @@
                     </div>
                 </li>
                 <li class="list-inline-item me-5">
+                    {% if total > 0 %}
                     <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-dark{% endif %} nav-link" href="{% url 'view_bag' %}">
                         <div class="text-center">
                             <div><i class="fas fa-shopping-bag fa-lg"></i></div>
@@ -54,6 +55,7 @@
                             </p>
                         </div>
                     </a>
+                    {% endif %}
                 </li>
             </ul>
         </div>

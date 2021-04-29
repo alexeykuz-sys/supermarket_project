@@ -277,9 +277,13 @@ input[name="q"]::placeholder {
   flex-direction: row;
 }
 
-.input-group {
-  width: 30%;
-}
+.qtty-input-group {
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+} 
 
 /* bag items card */
 
@@ -324,8 +328,12 @@ input[name="q"]::placeholder {
   font-size: 25px;
   font-weight: 600;
 }
-.input-group {
+
+
+.bag-input-group{
   width: 90%;
+  display: flex;
+  flex-direction: row;
 }
 
 
@@ -367,7 +375,7 @@ input[name="q"]::placeholder {
     font-weight: 800;
   }
 
-  .input-group {
+  .bag-input-group {
     width: 100%;
   }
 
