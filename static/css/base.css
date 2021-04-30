@@ -376,6 +376,24 @@ input[name="q"]::placeholder {
   text-transform: uppercase;
 }
 
+
+/* Toasts */
+
+.message-container {
+  position: fixed;
+  top:72px;
+  right: 15px;
+  z-index: 99999;
+}
+
+.custom-toast{
+  overflow: visible;
+}
+
+.toast-capper {
+  height: 2px;
+}
+
 /* Media queries */
 
 @media (min-width: 576px) {

@@ -68,16 +68,3 @@ def product_detail(request, product_id):
     }
     
     return render(request, 'products/product_detail.html', context)
-
-def products_favourite(request, product_id):
-    """ A view to show favourite products """
-    
-    product = get_object_or_404(Product, pk=product_id)
-    
-    context = {
-        'product': product,
-        'favourite': favourite,
-        
-    }
-    
-    return render(request, 'products/products_favourite.html', context)
