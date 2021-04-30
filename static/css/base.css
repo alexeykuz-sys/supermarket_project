@@ -253,6 +253,16 @@ input[name="q"]::placeholder {
   color: white;
 }
 
+.like{
+  fill:rgb(131, 126, 126);
+ cursor: pointer;
+}
+
+.heart {
+  fill: #095277;
+  cursor: pointer;
+}
+
 /* Individual products page */
 
 .browse-products {

@@ -7,7 +7,7 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="#" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}" id="all-products-link" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Home
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
@@ -45,23 +45,16 @@
             <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Diary" id="diary-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Diary
             </a>
-            <!-- <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
-            </div> -->
         </li>
         <li class="nav-item dropdown">
             <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Fish" id="Fish-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Fish
             </a>
-            <!-- <div class="dropdown-menu border-0" aria-labelledby="specials-link">
-                <a href="{% url 'products' %}?category=new_arrivals" class="dropdown-item">New Arrivals</a>
-                <a href="{% url 'products' %}?category=deals" class="dropdown-item">Deals</a>
-                <a href="{% url 'products' %}?category=clearance" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=new_arrivals,deals,clearance" class="dropdown-item">All Specials</a>
-            </div> -->
+        </li>
+        <li class="nav-item dropdown">
+            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products_favourite' product.id %}" id="favourite-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+               Favourites
+            </a>
         </li>
     </ul>
 </div>

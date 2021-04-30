@@ -13,11 +13,15 @@ class Category(models.Model):
 
     def get_friendly_name(self):
         return self.friendly_name
+    
+
+
 
 
 class Product(models.Model):
     category = models.ForeignKey('Category', null=True, blank=True,
                                  on_delete=models.SET_NULL)
+    favourite = models.BooleanField(default=False, null=True, blank=True)
     sku = models.CharField(max_length=254, null=True, blank=True)
     name = models.CharField(max_length=254)
     description = models.TextField()
