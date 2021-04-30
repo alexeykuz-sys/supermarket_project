@@ -38,9 +38,9 @@ def adjust_bag(request, item_id):
     quantity = int(request.POST.get('quantity'))
     bag = request.session.get('bag', {})
     
-    if bag.exist():
+    if quantity > 0:
     
-        bag[item_id] += quantity
+        bag[item_id] = quantity
     else:
         bag.pop(item_id)
         
@@ -55,7 +55,7 @@ def remove_from_bag(request, item_id):
     try:
         bag = request.session.get('bag', {})
         bag.pop(item_id)
-        bag.clear()
+        
         
         request.session['bag'] = bag
         return HttpResponse(status=200)

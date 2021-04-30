@@ -113,6 +113,11 @@ input[name="q"]::placeholder {
 #delivery-banner {
   background-color: #1d7ba9;
 }
+
+.bag-color{
+  background-color: #1d7ba9;
+  color: white;
+}
 /* Hero image */
 
 .top-image {
