@@ -103,19 +103,12 @@
                         </div>
                     </div>
                 </div>
-            </div>
-
-            <div class="col{% if s %}-12 mt-2{% endif %}">
-                <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 mt-5">
-                    <span class="icon">
-                        <i class="fas fa-chevron-left"></i>
-                    </span>
-                    <span class="text-uppercase">Keep Shopping</span>
-                </a>
-                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Bag">
-            </div>
-            <input type="hidden" name="redirect_url" value="{{ request.path }}">
-        </div>
+              </div>
+                <div class="col-12 w-50 mt-5 btn-wrapper">    
+                  <input type="submit" class="btn add-btn" value="Add to Bag">
+                </div>
+                <input type="hidden" name="redirect_url" value="{{ request.path }}">
+              </div>
     </form>
                 
     </div>

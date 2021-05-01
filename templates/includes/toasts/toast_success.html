@@ -1,13 +1,13 @@
-<div class="toast custom-toast rounded-0 border-top-0" data-bs-autohide="false">
+<div class="toast custom-toast rounded-0 border-top-0" role="alert" aria-live="assertive" aria-atomic="true" data-bs-autohide="false">
     <div class="arrow-up arrow-success"></div>
     <div class="w-100 toast-capper bg-success"></div>
     <div class="toast-header bg-white text-dark">
         <strong class="mr-auto">Success!</strong>
-        <button type="button" class="ml-2 mb-1 close text-dark" data-bs-    dismiss="toast" aria-label="Close">
+        <button type="button" class="ml-2 mb-1 close text-dark" data-bs-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
     </div>
-    <div class="toast-body bg-white">
+    <div class="toast-body bg-light">
         <div class="row">
             <div class="col">
                 {{ message }}
@@ -15,7 +15,7 @@
             </div>
         </div>
         {% if grand_total and not on_profile_page %}
-            <p class="logo-font bg-white text-black py-1">Your Bag ({{ product_count }})</p>
+            <p class="logo-font bg-light text-dark py-1">Your Bag ({{ product_count }})</p>
             <div class="bag-notification-wrapper">
                 {% for item in bag_items %}
                     <div class="row">
@@ -36,7 +36,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <strong><p class="mt-3 mb-1 text-black">
+                    <strong><p class="mt-3 mb-1 text-dark">
                         Total{% if free_delivery_delta > 0 %} (Exc. delivery){% endif %}: 
                         <span class="float-right">${{ total|floatformat:2 }}</span>
                     </p></strong>
@@ -45,7 +45,7 @@
                             Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
                         </p>
                     {% endif %}
-                    <a href="" class="btn btn-black btn-block rounded-0">
+                    <a href="" class="btn btn-dark btn-block rounded-0">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
