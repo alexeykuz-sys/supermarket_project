@@ -1,5 +1,7 @@
 {% extends "base.html" %} 
-{% load static %} 
+{% load static %}
+{% load bag_tools %}
+
 
 {% block page_header %} 
 {% include 'includes/navbar.html'%}
@@ -118,7 +120,7 @@
                         </span>
                         <span class="text-uppercase">Keep Shopping</span>
                         </a> -->
-                        <a href="" class="btn checkout-card-btn">
+                        <a href="{% url 'checkout' %}" class="btn checkout-card-btn">
                         <span class="text">Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock fa-sm"></i>
