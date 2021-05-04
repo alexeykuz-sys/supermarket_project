@@ -298,10 +298,10 @@ input[name="q"]::placeholder {
   padding-top: 5px;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: row;
-}
+  /* .form-group {
+    display: flex;
+    flex-direction: row;
+  } */
 
 .qtty-input-group {
   width: 48%;
