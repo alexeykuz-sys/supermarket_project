@@ -61,13 +61,27 @@
             <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name}}
           </a>
         </p>
-        {% endif %} {% if product.rating %}
+        {% endif %} 
+        {% if product.rating %}
         <small class="text-muted"
           ><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small
         >
         {% else %}
         <small class="text-muted">No Rating</small>
-        {% endif %} {% if request.user.is_superuser %}
+        {% endif %} 
+        <div class="favourite-section">
+          {% if is_favourite %}
+            <a href="">
+              <i class="fas-fa-heart fa-lg" ></i>
+            </a>
+          {% else %}
+          <a href="">
+            <i class="far-fa-heart fa-lg" ></i>
+          </a>
+          {% endif %}
+
+        </div>
+        {% if request.user.is_superuser %}
         <small class="ml-3">
           <a href="">Edit</a> |
           <a class="text-danger" href="">Delete</a>

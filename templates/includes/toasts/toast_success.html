@@ -6,6 +6,13 @@
         <button type="button" class="ml-2 mb-1 close text-dark" data-bs-dismiss="toast" aria-label="Close">
             <span aria-hidden="true">&times;</span>
         </button>
+        {% if grand_total > 0%}
+        <div class="float-right">
+            <a href="{% url 'view_bag' %}" class="btn checkout-card-btn">
+                <span class="text-uppercase">Bag View</span>
+            </a>
+        </div>
+        {% endif %}
     </div>
     <div class="toast-body bg-light">
         <div class="row">
@@ -13,6 +20,7 @@
                 {{ message }}
                 <hr class="mt-1 mb-3">
             </div>
+            
         </div>
         {% if grand_total and not on_profile_page %}
             <p class="logo-font bg-light text-dark py-1">Your Bag ({{ product_count }})</p>
@@ -45,7 +53,7 @@
                             Spend <strong>${{ free_delivery_delta }}</strong> more to get free next day delivery!
                         </p>
                     {% endif %}
-                    <a href="" class="btn btn-dark btn-block rounded-0">
+                    <a href="" class="btn checkout-card-btn">
                         <span class="text-uppercase">Go To Secure Checkout</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>

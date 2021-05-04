@@ -118,6 +118,17 @@ input[name="q"]::placeholder {
   background-color: #1d7ba9;
   color: white;
 }
+
+#favourite-link:active,
+#fish-link:active,
+#diary-link:active,
+#meat-link:active,
+#fruits-link:active,
+#all-products-link:active {
+  text-decoration-line: underline;
+  background-color: #17a2b8;
+}
+
 /* Hero image */
 
 .top-image {
