@@ -119,14 +119,31 @@ input[name="q"]::placeholder {
   color: white;
 }
 
-#favourite-link:active,
-#fish-link:active,
-#diary-link:active,
-#meat-link:active,
-#fruits-link:active,
-#all-products-link:active {
-  text-decoration-line: underline;
-  background-color: #17a2b8;
+
+#favourite-link::after,
+#fish-link::after,
+#diary-link::after,
+#meat-link::after,
+#fruits-link::after,
+#all-products-link::after {
+  background-color: #28a745;
+}
+
+#favourite-link::after,
+#fish-link::after,
+#diary-link::after,
+#meat-link::after,
+#fruits-link::after,
+#all-products-link::after {
+  position: absolute;
+    bottom: -30%;
+    left: 0;
+    content: '';
+    width: 70%;
+    height: 2px;
+    visibility: hidden;
+    transition: all 0.25s ease-out;
+    transform-origin: bottom left;
 }
 
 /* Hero image */
@@ -220,7 +237,8 @@ input[name="q"]::placeholder {
 
 .products-container,
 .product-container,
-.bag-container {
+.bag-container,
+.checkout-container {
   padding-top: 170px;
 }
 
@@ -298,10 +316,11 @@ input[name="q"]::placeholder {
   padding-top: 5px;
 }
 
-  /* .form-group {
-    display: flex;
+  .form-group {
+    display: block;
     flex-direction: row;
-  } */
+    margin: 3px;
+  }
 
 .qtty-input-group {
   width: 48%;

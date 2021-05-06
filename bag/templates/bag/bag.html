@@ -17,10 +17,22 @@
                     <h2 class="logo-font mb-4">Shopping Basket</h2>
                 <hr />
             </div>
+            
+        </div>
+        <div class="row">
+            <div class="col{% if s %}-12 mt-4{% endif %}">
+                <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 my-5">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+              </div>
+              <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 {% if bag_items %}
                     {% for item in bag_items %}
                         <div class="card bag-card border-1">
@@ -91,7 +103,7 @@
                     <p>No items in the bag</p>           
                 {% endif %}
             </div>
-            <div class="col-sm-12 col-md-6">
+            <div class="col-sm-12 col-md-12 col-lg-6">
                 {% if total > 0 %}
                 <div class="card checkout-card">
                     <div class="card-header checkout-card-header text-center fs-2 fw-bold">Summary</div>
@@ -103,12 +115,12 @@
                         <h4 class="mt-4">
                         <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
                         </h4>
-                        {% if free_delivery_delta > 0 %}
+                        <!-- {% if free_delivery_delta > 0 %}
                         <p class="mb-1 text-danger">
                         You could get free delivery by spending just
                         <strong>${{ free_delivery_delta }}</strong> more!
                         </p>
-                        {% endif %}
+                        {% endif %} -->
                     </div>
                     <div class="card-footer checkout-card-footer">
                         <!-- <a
