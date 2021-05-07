@@ -1,5 +1,11 @@
 {% extends "account/base.html" %}
 
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%}
+
+{% endblock %} 
+
 {% load i18n %}
 {% load account socialaccount %}
 
@@ -41,8 +47,10 @@ for a {{ site_name }} account and sign in below:{% endblocktrans %}</p>
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Home</a>
-  <button class="primaryAction" type="submit">{% trans "Sign In" %}</button>
+  <div class="btn-wrapper">
+    <a class="btn btn-outline-dark " href="{% url 'home' %}">Home</a>
+    <button class="primaryAction login-btn " type="submit">{% trans "Sign In" %}</button>
+  </div>
   <p class="mt-2">
     <a class="button secondaryAction" href="{% url 'account_reset_password' %}">{% trans "Forgot Password?" %}</a>
   </p>

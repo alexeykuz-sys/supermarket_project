@@ -11,14 +11,15 @@
                         <img class="login-img-top" src="/media/pics/logo.png"  alt="...">
                         <span class="card-text">Groceries in a jiffy.</span>
                         <div class="card-body">
-                            <!-- <button class="btn login-btn btn-outline-primary" role="button" type="submit"> -->
-                                <a href="{% url 'account_login' %}" class="login-btn btn">Login</a>
-                            <!-- </button> -->
-                            <!-- <button class="btn register-btn btn-outline-primary" role="button" type="submit"> -->
+                            {% if user.is_authenticated %}
+                            <a href="{% url 'products' %}" class="login-btn btn mt-5">{{user}}, Welcome to the Shop</a>
+                            {% else %}
+                            <a href="{% url 'account_login' %}" class="login-btn btn">Login</a>
+                            
                             <a class="register-link btn register-btn " href="{% url 'account_signup' %}">Register</a>
-                            <!-- </button> -->
                         </div>
                         <a class="shop-link text-center mb-3" href="{% url 'products' %}">Browse the shop</a>
+                        {% endif %}
                       </div>
                 </div>
             </div>

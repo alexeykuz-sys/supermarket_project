@@ -1,6 +1,12 @@
   
 {% extends "account/base.html" %}
 
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%}
+
+{% endblock %} 
+
 {% load i18n %}
 
 {% block head_title %}{% trans "Signup" %}{% endblock %}
@@ -18,8 +24,10 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}" />
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'account_login' %}">Back to Login</a>
-  <button type="submit">{% trans "Sign Up" %}</button>
+  <div class="btn-wrapper">
+    <a class="btn btn-outline-dark" href="{% url 'account_login' %}">Back to Login</a>
+    <button class="signup-btn" type="submit">{% trans "Sign Up" %}</button>
+  </div>
 </form>
 
 {% endblock %}

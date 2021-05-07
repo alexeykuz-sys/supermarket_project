@@ -2,11 +2,18 @@
 
 {% load i18n %}
 
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%}
+
+{% endblock %} 
+
 {% block head_title %}{% trans "Sign Out" %}{% endblock %}
 
 {% block inner_content %}
+
 <hr>
-<h2 class="logo-font mb-4">{% trans "Sign Out" %}</h2>
+<h2 class="logo-font text-center mb-4">{% trans "Sign Out" %}</h2>
 <hr>
 <p>{% trans 'Are you sure you want to sign out?' %}</p>
 
@@ -15,8 +22,10 @@
   {% if redirect_field_value %}
   <input type="hidden" name="{{ redirect_field_name }}" value="{{ redirect_field_value }}"/>
   {% endif %}
-  <a class="btn btn-outline-black rounded-0" href="{% url 'home' %}">Cancel</a>
-  <button type="submit">{% trans 'Sign Out' %}</button>
+  <div class="btn-wrapper">
+    <a class="btn btn-danger text-white" href="{% url 'home' %}">Cancel</a>
+    <button class="allauth-signout-btn" type="submit">{% trans 'Sign Out' %}</button>
+  </div>
 </form>
 
 

@@ -91,7 +91,7 @@ body {
 }
 #btt-button:hover {
   background-color: rgb(230, 225, 225);
-  color: rgb(0, 60, 83);
+  color: #1d7ba9;
 }
 
 .btt-link,
@@ -229,6 +229,7 @@ input[name="q"]::placeholder {
   background-color: #1d7ba9;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .register-btn:hover,
@@ -247,6 +248,7 @@ input[name="q"]::placeholder {
 }
 
 /* Products page */
+
 
 .products-container,
 .product-container,
@@ -296,7 +298,7 @@ input[name="q"]::placeholder {
 
 .add-btn:active,
 .add-btn:hover {
-  background-color: #095277;
+  background-color: #1d7ba9;
   color: white;
 }
 
@@ -306,7 +308,7 @@ input[name="q"]::placeholder {
 }
 
 .heart {
-  fill: #095277;
+  fill: #1d7ba9;
   cursor: pointer;
 }
 
@@ -489,6 +491,48 @@ input[name="q"]::placeholder {
   overflow-y: auto;
 }
 
+ /* Allauth form formatting */
+
+.user-container {
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 355px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #c0c650;
+    color: #1d7ba9;
+    margin: 10px auto;
+    box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
+    rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
+    padding: 20px;
+    border-radius: 10px;
+    
+}
+
+.reset-btn,
+.signup-btn,
+.login-btn,
+.allauth-signout-btn{
+  border-radius: 5px;
+  background-color: #1d7ba9;
+  padding: 6px;
+  color: white;
+  border-color: #1d7ba9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+/* Login page */
+
+.btn-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 15px;
+}
+
 /* Media queries */
 
 @media (min-width: 576px) {
@@ -526,6 +570,10 @@ input[name="q"]::placeholder {
 
   /* Allauth form formatting */
 
+  .allauth-form-inner-content{
+    width: 100%;
+  }
+
   .allauth-form-inner-content p {
     margin-top: 1.5rem; /* mt-4 */
     color: #6c757d; /* text-secondary */
@@ -544,9 +592,9 @@ input[name="q"]::placeholder {
     color: #aab7c4;
   }
 
-  .allauth-form-inner-content button,
+  /* .allauth-form-inner-content button,
   .allauth-form-inner-content input[type="submit"] {
-    /* btn */
+    btn 
     display: inline-block;
     font-weight: 400;
     color: #fff;
@@ -561,18 +609,18 @@ input[name="q"]::placeholder {
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
-    border-radius: 0;
+    border-radius: 0; */
 
     /* standard bootstrap btn transitions */
-    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+    /* transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
       border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-  }
+  } */
 
   .allauth-form-inner-content button:hover,
   .allauth-form-inner-content input[type="submit"]:hover {
-    color: #fff;
-    background-color: #222;
-    border-color: #222;
+    color: #223;
+    /* background-color: #222;
+    border-color: #222; */
   }
 
   .allauth-form-inner-content a {
