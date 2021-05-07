@@ -2,7 +2,7 @@
 {% load static %}
 {% load bag_tools %}
 
-{% block extra_css %}
+{% block extracss %}
     <link rel="stylesheet" href="{% static 'checkout/css/checkout.css' %}">
 {% endblock %}
 
@@ -24,6 +24,7 @@
 
         <div class="row">
             <div class="col-12 col-lg-6 order-lg-last mb-5">
+                <div class="card checkout-card">
                 <p class="text-muted">Order Summary ({{ product_count }})</p>
                 <div class="row">
                     <div class="col-7 offset-2">
@@ -53,7 +54,7 @@
                         </div>
                     </div>
                 {% endfor %}
-                <hr class="my-0">
+                <hr class="my-3">
                 <div class="row text-dark text-right">
                     <div class="col-7 offset-2">
                         <p class="my-0">Order Total:</p>
@@ -66,6 +67,7 @@
                         <p class="my-0"><strong>£{{ grand_total | floatformat:2 }}</strong></p>
                     </div>
                 </div>
+            </div>
             </div>
             <div class="col-12 col-lg-6">
                 <p class="text-muted">Please fill out the form below to complete your order</p>
@@ -97,7 +99,7 @@
 						</div>
                     </fieldset>
                     <fieldset class="px-3">
-                        <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
+                        <legend class="fieldset-label small text-dark px-2 w-auto">Payment</legend>
                         <!-- A Stripe card element will go here -->
                         <div class="mb-3" id="card-element"></div>
                         <!-- Used to display form errors -->
@@ -107,8 +109,8 @@
                     </fieldset>
 
 
-                    <div class="submit-button text-right mt-5 mb-2">                    
-						<a href="{% url 'view_bag' %}" class="btn btn-outline-dark rounded-0">
+                    <div class="submit-button text-right mt-5 mb-2 ms-3">                    
+						<a href="{% url 'view_bag' %}" class="btn shopping-btn">
 							<span class="icon">
 								<i class="fas fa-chevron-left"></i>
 							</span>
@@ -120,7 +122,7 @@
 								<i class="fas fa-lock"></i>
 							</span>
 						</button>
-						<p class="small text-danger my-0">
+						<p class="small text-danger my-1">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>
 							</span>

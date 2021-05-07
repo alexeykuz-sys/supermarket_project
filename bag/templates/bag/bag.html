@@ -14,14 +14,14 @@
         <div class="row">
             <div class="col-sm-12 col-md-6">
                 <hr />
-                    <h2 class="logo-font mb-4">Shopping Basket</h2>
+                    <h2 class="logo-font text-center text-md-start mb-4">Shopping Basket</h2>
                 <hr />
             </div>
             
         </div>
         <div class="row">
-            <div class="col{% if s %}-12 mt-4{% endif %}">
-                <a href="{% url 'products' %}" class="btn btn-outline-dark rounded-0 my-5">
+            <div class="col">
+                <a href="{% url 'products' %}" class="btn shopping-btn my-3">
                     <span class="icon">
                         <i class="fas fa-chevron-left"></i>
                     </span>
@@ -32,7 +32,7 @@
         </div>
 
         <div class="row">
-            <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="col-sm-12 col-md-12 col-lg-6 px-0">
                 {% if bag_items %}
                     {% for item in bag_items %}
                         <div class="card bag-card border-1">
@@ -68,7 +68,7 @@
                                         <div class="form-group bag-card-form">
                                             <div class="bag-input-group">
                                                 <div class="input-group-prepend">
-                                                    <button class="decrement-qty btn btn-dark rounded-0" 
+                                                    <button class="decrement-qty btn btn-outline-dark" 
                                                         data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-minus fa-sm"></i>
@@ -80,7 +80,7 @@
                                                     data-item_id="{{ item.item_id }}"
                                                     id="id_qty_{{ item.item_id }}">
                                                 <div class="input-group-append">
-                                                    <button class="increment-qty btn btn-dark rounded-0"
+                                                    <button class="increment-qty btn btn-outline-dark"
                                                         data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
                                                         <span class="icon">
                                                             <i class="fas fa-plus fa-sm"></i>
@@ -103,11 +103,11 @@
                     <p>No items in the bag</p>           
                 {% endif %}
             </div>
-            <div class="col-sm-12 col-md-12 col-lg-6">
+            <div class="col-sm-12 col-md-12 col-lg-6 px-0">
                 {% if total > 0 %}
-                <div class="card checkout-card">
-                    <div class="card-header checkout-card-header text-center fs-2 fw-bold">Summary</div>
-                    <div class="card-body checkout-card-body text-end">
+                <div class="card bag-checkout-card">
+                    <div class="card-header bag-checkout-card-header text-center fs-2 fw-bold">Summary</div>
+                    <div class="card-body bag-checkout-card-body text-end">
                         <h6><strong>Bag Total: £{{ total|floatformat:2 }}</strong></h6>
                         
                         <h6>Delivery: £{{ delivery|floatformat:2 }}</h6>
@@ -122,22 +122,19 @@
                         </p>
                         {% endif %} -->
                     </div>
-                    <div class="card-footer checkout-card-footer">
-                        <!-- <a
-                        href="{% url 'products' %}"
-                        class="btn btn-outline-dark rounded-0 btn-sm"
-                        >
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                        </a> -->
-                        <a href="{% url 'checkout' %}" class="btn checkout-card-btn">
-                        <span class="text">Secure Checkout</span>
-                        <span class="icon">
-                            <i class="fas fa-lock fa-sm"></i>
-                        </span>
-                        </a>
+                    <div class="card-footer bag-checkout-card-footer">
+                        {% if total < 15 %}
+                            <a href="{% url 'products' %}" class="btn bag-checkout-card-btn">
+                                <span class="text-danger">Min spend £15</span>
+                            </a>
+                        {% else %}
+                            <a href="{% url 'checkout' %}" class="btn bag-checkout-card-btn">
+                                <span class="text">Secure Checkout</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock fa-sm"></i>
+                                </span>
+                            </a>
+                        {% endif %}
                     </div>
                 </div>
                 {% endif %}
