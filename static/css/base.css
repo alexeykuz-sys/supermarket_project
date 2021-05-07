@@ -25,7 +25,7 @@ body {
 
 .shopping-btn {
   background: white;
-  color: black ;
+  color: black;
   border: 1px solid rgb(12, 12, 12);
   border-radius: 5px;
   font-size: 15px;
@@ -124,11 +124,10 @@ input[name="q"]::placeholder {
   background-color: #1d7ba9;
 }
 
-.bag-color{
+.bag-color {
   background-color: #1d7ba9;
   color: white;
 }
-
 
 #favourite-link::after,
 #fish-link::after,
@@ -146,14 +145,14 @@ input[name="q"]::placeholder {
 #fruits-link::after,
 #all-products-link::after {
   position: absolute;
-    bottom: -30%;
-    left: 0;
-    content: '';
-    width: 70%;
-    height: 2px;
-    visibility: hidden;
-    transition: all 0.25s ease-out;
-    transform-origin: bottom left;
+  bottom: -30%;
+  left: 0;
+  content: "";
+  width: 70%;
+  height: 2px;
+  visibility: hidden;
+  transition: all 0.25s ease-out;
+  transform-origin: bottom left;
 }
 
 .list-inline-item:not(:last-child) {
@@ -301,9 +300,9 @@ input[name="q"]::placeholder {
   color: white;
 }
 
-.like{
-  fill:rgb(131, 126, 126);
- cursor: pointer;
+.like {
+  fill: rgb(131, 126, 126);
+  cursor: pointer;
 }
 
 .heart {
@@ -330,11 +329,11 @@ input[name="q"]::placeholder {
   padding-top: 5px;
 }
 
-  .form-group {
-    display: block;
-    flex-direction: row;
-    margin: 3px;
-  }
+.form-group {
+  display: block;
+  flex-direction: row;
+  margin: 3px;
+}
 
 .qtty-input-group {
   width: 48%;
@@ -342,7 +341,7 @@ input[name="q"]::placeholder {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-} 
+}
 
 /* bag items card */
 
@@ -379,21 +378,17 @@ input[name="q"]::placeholder {
   width: 100%;
   align-items: flex-start;
   justify-content: start;
-  
 }
 
 .product-price {
-  
   font-size: 20px;
   font-weight: 600;
 }
 
-
-.bag-input-group{
+.bag-input-group {
   display: flex;
   flex-direction: row;
 }
-
 
 /* checkout card */
 
@@ -401,12 +396,11 @@ input[name="q"]::placeholder {
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
   /* min-width: 350px; */
-  margin-top: 10px ;
+  margin-top: 10px;
   margin-left: 50px;
-  
 }
 
-.bag-checkout-card-footer{
+.bag-checkout-card-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -433,7 +427,7 @@ input[name="q"]::placeholder {
   top: 72px;
   right: 15px;
   z-index: 99999999999;
- border: 1px solid rebeccapurple;
+  border: 1px solid rebeccapurple;
 }
 
 .custom-toast {
@@ -446,10 +440,10 @@ input[name="q"]::placeholder {
 
 /* from CSS-tricks.com: https://css-tricks.com/snippets/css/css-triangle/ */
 .arrow-up {
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 4px solid transparent;
-  border-right: 4px solid transparent; 
+  border-right: 4px solid transparent;
   border-bottom: 10px solid black;
   position: absolute;
   top: -10px;
@@ -522,16 +516,66 @@ input[name="q"]::placeholder {
     font-weight: 600;
   }
 
-  
-/* checkout card */
-
+  /* checkout card */
 }
 @media (min-width: 1200px) {
-  
-.bag-checkout-card {
-  width: 30rem;
-  position:fixed;
-  
-  
+  .bag-checkout-card {
+    width: 30rem;
+    position: fixed;
+  }
+
+  /* Allauth form formatting */
+
+  .allauth-form-inner-content p {
+    margin-top: 1.5rem; /* mt-4 */
+    color: #6c757d; /* text-secondary */
+  }
+
+  .allauth-form-inner-content input {
+    border-color: #000;
+    border-radius: 0;
+  }
+
+  .allauth-form-inner-content label:not([for="id_remember"]) {
+    display: none;
+  }
+
+  .allauth-form-inner-content input::placeholder {
+    color: #aab7c4;
+  }
+
+  .allauth-form-inner-content button,
+  .allauth-form-inner-content input[type="submit"] {
+    /* btn */
+    display: inline-block;
+    font-weight: 400;
+    color: #fff;
+    text-align: center;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-color: #000;
+    border: 1px solid #000;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    border-radius: 0;
+
+    /* standard bootstrap btn transitions */
+    transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out,
+      border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+  }
+
+  .allauth-form-inner-content button:hover,
+  .allauth-form-inner-content input[type="submit"]:hover {
+    color: #fff;
+    background-color: #222;
+    border-color: #222;
+  }
+
+  .allauth-form-inner-content a {
+    color: #17a2b8; /* text-info */
   }
 }

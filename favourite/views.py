@@ -3,11 +3,13 @@ from products.models import Product
 from django.contrib import messages
 
 # Create your views here.
-def view_favourite(request):
+def favourite(request):
     
-    """ A view that renders the bag contents page """
+    """ A view that renders the favourite contents page """
+    template = 'favourite/favourite.html'
+    context = {}
     
-    return render(request, 'favourite/favourite.html')
+    return render(request, template, context)
 
 
 def add_to_favourite(request, product_id):
