@@ -12,7 +12,18 @@
 {% endblock %} 
 
 {% block content %}
-    <div class="container mt-5">
+    <div class="container profile-container">
+        <div class="row">
+            <div class="col">
+                <a href="{% url 'products' %}" class="btn shopping-btn my-3">
+                    <span class="icon">
+                        <i class="fas fa-chevron-left"></i>
+                    </span>
+                    <span class="text-uppercase">Keep Shopping</span>
+                </a>
+              </div>
+              <input type="hidden" name="redirect_url" value="{{ request.path }}">
+        </div>
         <div class="row">
             <div class="col">
                 <hr>
@@ -68,17 +79,6 @@
                         </tbody>
                     </table>
                 </div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <a href="{% url 'products' %}" class="btn shopping-btn my-3">
-                        <span class="icon">
-                            <i class="fas fa-chevron-left"></i>
-                        </span>
-                        <span class="text-uppercase">Keep Shopping</span>
-                    </a>
-                  </div>
-                  <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </div>
         </div>
     </div>

@@ -17,12 +17,6 @@ body {
   width: 1.5rem;
 }
 
-/* .btn-dark {
-  background: black;
-  color: white;
-  border-radius: 5px;
-} */
-
 .shopping-btn {
   background: white;
   color: black;
@@ -215,12 +209,6 @@ input[name="q"]::placeholder {
   width: 100%;
 }
 
-/* .login-card .card-wrapper .login-link {
-   padding-bottom: 10px;
-   text-decoration: none;
-   background-color: #1d7ba9;
-   cursor: pointer;
-  } */
 
 .register-btn,
 .login-btn {
@@ -249,17 +237,19 @@ input[name="q"]::placeholder {
 
 /* Products page */
 
+.edit-container,  
 .product-management-container,
 .products-container,
 .product-container,
 .bag-container,
-.checkout-container {
+.checkout-container,
+.profile-container {
   padding-top: 180px;
 }
 
 .product-card {
-  width: 315px;
-  height: 530px;
+  width: 275px;
+  height: 425px;
   padding: 10px;
   margin: 20px auto;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
@@ -268,18 +258,20 @@ input[name="q"]::placeholder {
 
 .product-card .card-img-top,
 .product-card .product-image-link {
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
+ margin: auto;
+ display: block;
 }
 
-.product-name {
-  font-size: 15px;
+.products-name {
+  font-size: 17px;
   font-weight: bold;
   color: rgb(51, 51, 51);
 }
 
 .product-price {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .add-btn {
@@ -411,7 +403,8 @@ input[name="q"]::placeholder {
 .bag-checkout-card-btn,
 .checkout-card-btn {
   width: 100%;
-  background-color: #c0c650;
+  background-color: #1d7ba9;
+  color: white;
   border-radius: 5px;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
     rgba(0, 0, 0, 0.05) 0px 1px 1px 0px;
@@ -562,7 +555,11 @@ input[name="q"]::placeholder {
   border-color: #dc3545;
   border-radius: 0;
 }
-
+.form-btn {
+  background-color:#1d7ba9;
+  color: white;
+  border-radius: 5px;
+}
 
 /* Media queries */
 

@@ -1,19 +1,17 @@
 {% extends "base.html" %}
 {% load static %}
 
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
+
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%}
+
+{% endblock %} 
 
 {% block content %}
-    <div class="overlay"></div>
-    <div class="container">
+    <div class="container edit-container">
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 offset-md-3">
                 <hr>
                 <h2 class="logo-font mb-4">Product Management</h2>
                 <h5 class="text-muted">Edit a Product</h5>
@@ -22,7 +20,7 @@
         </div>
 
         <div class="row">
-            <div class="col-12 col-md-6">
+            <div class="col-12 col-md-6 offset-md-3">
                 <form method="POST" action="{% url 'edit_product' product.id %}" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                     {% for field in form %}
@@ -33,8 +31,8 @@
                         {% endif %}
                     {% endfor %}
                     <div class="text-right">
-                        <a class="btn btn-outline-dark rounded-0" href="{% url 'products' %}">Cancel</a>
-                        <button class="btn btn-dark rounded-0" type="submit">Update Product</button>
+                        <a class="btn btn-outline-dark" href="{% url 'products' %}">Cancel</a>
+                        <button class="btn form-btn ms-1" type="submit">Update Product</button>
                     </div>
                 </form>
             </div>            

@@ -116,12 +116,16 @@
 							</span>
 							<span class="fw-bold">Adjust Bag</span>
 						</a>
-						<button id="submit-button" class="btn checkout-card-btn w-50">
-							<span class="font-weight-bold">Complete Order</span>
-							<span class="icon">
-								<i class="fas fa-lock"></i>
-							</span>
-						</button>
+                        {% if user.is_authenticated %}
+                            <button id="submit-button" class="btn checkout-card-btn w-50">
+                                <span class="font-weight-bold">Complete Order</span>
+                                <span class="icon">
+                                    <i class="fas fa-lock"></i>
+                                </span>
+                            </button>
+                        {% else %}
+                        <a href="{% url 'account_login' %}" class="login-btn w-25 btn">Login</a>
+                        {% endif %}
 						<p class="small text-danger my-1">
 							<span class="icon">
 								<i class="fas fa-exclamation-circle"></i>

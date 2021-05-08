@@ -34,7 +34,7 @@
   </div>  
   <div class="row">
     {% for product in products %}
-    <div class="col-sm-12 col-md-6 col-lg-4">
+    <div class="col-sm-12 col-md-6 col-lg-3">
       <div class="card product-card border-1">
         {% if product.image %}
         <a href="{% url 'product_detail' product.id %}">
@@ -54,7 +54,7 @@
         </a>
         {% endif %}
         <div class="card-body pb-0">
-          <p class="mb-0 product-name">{{ product.name }}</p>
+          <p class="mb-0 products-name">{{ product.name }}</p>
         </div>
         <div class="card-footer bg-white pt-0 border-0 text-start">
           <div class="row">
