@@ -1,5 +1,4 @@
 
-My Recipes is a recipe site of user's  favourite receipes. The recipes are added by users to have a single digitised point of reference for user's favorite recipes. The site is designed to be easy to navigate and use, promoting a simple layout with minimal but effective and purposeful features.
 
 **Project Requirements:**
 
@@ -45,5 +44,5 @@ A live version of the site is available [LIVE SITE](https://my-recipe-ms3.heroku
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQyMjgxNzg2NF19
+eyJoaXN0b3J5IjpbODMxNjU3NTIzLC00MjI4MTc4NjRdfQ==
 -->
