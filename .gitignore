@@ -10,5 +10,7 @@ venv
 db.sqlite3
 *.pyc
 .env
+db.json
+
 
 

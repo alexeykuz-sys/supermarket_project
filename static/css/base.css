@@ -114,40 +114,31 @@ input[name="q"]::placeholder {
   color: #aab7c4;
 }
 
-#delivery-banner {
+/* #delivery-banner {
   background-color: #1d7ba9;
-}
+} */
 
 .bag-color {
   background-color: #1d7ba9;
   color: white;
 }
 
-#favourite-link::after,
-#fish-link::after,
-#diary-link::after,
-#meat-link::after,
-#fruits-link::after,
-#all-products-link::after {
-  background-color: #28a745;
+.logo-font:active {
+  
+  border-bottom: #28a745;
 }
 
-#favourite-link::after,
-#fish-link::after,
-#diary-link::after,
-#meat-link::after,
-#fruits-link::after,
-#all-products-link::after {
+/* .logo-font:active {
   position: absolute;
   bottom: -30%;
   left: 0;
   content: "";
   width: 70%;
   height: 2px;
-  visibility: hidden;
-  transition: all 0.25s ease-out;
+  /* visibility: hidden; */
+  /* transition: all 0.25s ease-out; 
   transform-origin: bottom left;
-}
+} */
 
 .list-inline-item:not(:last-child) {
   margin-right: 0;
@@ -248,8 +239,8 @@ input[name="q"]::placeholder {
 }
 
 .product-card {
-  width: 275px;
-  height: 425px;
+  width: 230px;
+  height: 365px;
   padding: 10px;
   margin: 20px auto;
   box-shadow: rgba(50, 50, 105, 0.15) 0px 2px 5px 0px,
@@ -258,8 +249,8 @@ input[name="q"]::placeholder {
 
 .product-card .card-img-top,
 .product-card .product-image-link {
-  height: 200px;
-  width: 200px;
+  height: 126px;
+  width: 120px;
  margin: auto;
  display: block;
 }
@@ -348,7 +339,7 @@ input[name="q"]::placeholder {
 }
 
 .bag-image-wrapper {
-  width: 65%;
+  width: 35%;
 }
 
 .bag-card-wrapper {

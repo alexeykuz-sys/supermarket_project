@@ -52,9 +52,29 @@
             </a>
         </li>
         <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'favourite' %}" id="favourite-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font click-link fw-bold nav-link text-dark me-5" href="{% url 'favourite' %}" id="favourite-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                Favourites
             </a>
         </li>
     </ul>
 </div>
+
+
+
+{% block postloadjs %}
+    
+    <script type="text/javascript">
+      
+    const menuLink = document.querySelectorAll('.logo-font')
+    
+    menuLink.forEach(link => {
+        console.log(link)
+        link.addEventListener('click', ()=> {
+            link.classList.add('.click-link');
+        })
+    })
+
+
+	</script>
+    
+{% endblock %}

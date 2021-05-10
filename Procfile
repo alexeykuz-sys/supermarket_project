@@ -1,0 +1,1 @@
+web: gunicorn supermarket_project.wsgi:application
