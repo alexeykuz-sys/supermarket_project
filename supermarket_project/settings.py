@@ -30,7 +30,7 @@ SECRET_KEY = 'django-insecure-t4iu(-%3^n%iv2kc5$*da7j%nxtw+4td-+ux5g4!c3u&f8!ohh
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['ms4-supermarket-project.herokuapp.com', 'localhost']
 
 
 # Application definition
