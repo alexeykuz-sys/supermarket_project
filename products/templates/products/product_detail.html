@@ -70,16 +70,15 @@
         <small class="text-muted">No Rating</small>
         {% endif %} 
         <div class="favourite-section">
-          {% if is_favourite %}
-            <a href="">
-              <i class="fas-fa-heart fa-lg" ></i>
+          {% if is_favourite%}
+            <a href="{% url 'product_favourite_list' id=product.id %}">
+              <i class="fas fa-heart fa-lg"></i>
             </a>
           {% else %}
-          <a href="">
-            <i class="far-fa-heart fa-lg" ></i>
-          </a>
+            <a href="{% url 'product_favourite_list' id=product.id %}">
+              <i class="far fa-heart fa-lg"></i>
+            </a>
           {% endif %}
-
         </div>
         {% if request.user.is_superuser %}
         <small class="ml-3">

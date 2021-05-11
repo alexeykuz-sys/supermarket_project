@@ -1,0 +1,102 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'profiles/css/profiles.css' %}">
+{% endblock %}
+
+
+{% block page_header %} 
+{% include 'includes/navbar.html'%}
+
+{% endblock %} 
+
+{% block content %}
+    <div class="container checkout-container">
+        <div class="row">
+            <div class="col">
+                <hr>
+                <h2 class="logo-font mb-4">Favourites</h2>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-6 px-0">
+                {% if favourite %}
+                    {% for item in favourites %}
+                        <div class="card bag-card border-1">
+                            <div class="bag-image-wrapper">
+                                {% if item.product.image %}
+                                <a href="">
+                                <img
+                                    class="card-img-top"
+                                    src="{{ item.product.image.url }}"
+                                    alt="{{ item.product.name }}"
+                                />
+                                </a>
+                                {% else %}
+                                <a href="">
+                                <img
+                                    class="card-img-top"
+                                    src="{{ MEDIA_URL }}noimage.png"
+                                    alt="{{ item.product.name }}"
+                                />
+                                </a>
+                                {% endif %}
+                            </div>
+                            <div class="bag-card-wrapper">
+                                <div class="card-body bag-card-body">
+                                    <p class="bag-product-name">{{ item.product.name }}</p>
+                                </div>
+                                <div class="bag-card-footer ">
+                                    <!-- <div class="row">
+                                        <div class="col-12"> -->
+                                    <p class=" product-price">£{{ item.product.price }}</p>
+                                    <form class="form  update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
+                                        {% csrf_token %}
+                                        <div class="form-group bag-card-form">
+                                            <div class="bag-input-group">
+                                                <div class="input-group-prepend">
+                                                    <button class="decrement-qty btn btn-outline-dark" 
+                                                        data-item_id="{{ item.item_id }}" id="decrement-qty_{{ item.item_id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-minus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>  
+                                                <input class="form-control form-control-sm qty_input" type="number"
+                                                    name="quantity" value="{{ item.quantity }}" min="1" max="99"
+                                                    data-item_id="{{ item.item_id }}"
+                                                    id="id_qty_{{ item.item_id }}">
+                                                <div class="input-group-append">
+                                                    <button class="increment-qty btn btn-outline-dark"
+                                                        data-item_id="{{ item.item_id }}" id="increment-qty_{{ item.item_id }}">
+                                                        <span class="icon">
+                                                            <i class="fas fa-plus fa-sm"></i>
+                                                        </span>
+                                                    </button>
+                                                </div>
+                                                
+                                            </div>
+                                        </div>
+                                    </form>
+                                            <!-- </div>
+                                            </div> -->
+                                </div>
+                                <!-- <a class="update-link text-info "><small>Update</small></a> -->
+                                <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
+                            </div>
+                        </div>
+                    {% endfor %} 
+                    {% else %}
+                    <p>No items in the bag</p>           
+                {% endif %}
+            </div>
+               
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

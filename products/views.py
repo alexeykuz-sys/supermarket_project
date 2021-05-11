@@ -16,6 +16,7 @@ def all_products(request):
     sort = None
     direction = None
     
+    
         
     
     if request.GET:
@@ -65,12 +66,15 @@ def product_detail(request, product_id):
     """ A view to show individual product details """
     
     product = get_object_or_404(Product, pk=product_id)
+    is_favourite = False
+    
+    if product.favourites.filter(id=request.user.id).exists():
+        is_favourite = True
     
         
     context = {
         'product': product,
-        
-        
+        'is_favourite': is_favourite,
     }
     
     return render(request, 'products/product_detail.html', context)
