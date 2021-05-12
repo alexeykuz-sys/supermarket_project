@@ -46,40 +46,41 @@
     </div>
     <div class="col-sm-12 col-md-6 offset-md-1">
       <div class="product-details-container">
-        <p class=" product-name mb-0">{{ product.name }}</p>
+        <p class=" product-name mb-2">{{ product.name }}</p>
+      </div>
+      <div class="favourite-section mb-2">
+        {% if is_favourite%}
+          <a href="{% url 'favourites' product.id %}">
+            <i class="fas fa-heart fa-lg "></i>
+          </a>
+        {% else %}
+        <a href="{% url 'favourites' product.id %}">
+            <i class="far fa-heart fa-lg"></i>
+          </a>
+        {% endif %}
       </div>
       <div class="product-details-wrapper my-5">
         <p class="lead mb-0 text-left font-weight-bold">
           £{{ product.price }}
         </p>
         {% if product.category %}
-        <p class="small mt-1 mb-0">
+        <p class="small mt-1 mb-2">
           <a
             class="text-muted"
             href="{% url 'products' %}?category={{ product.category.name }}"
           >
-            <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name}}
+            <i class="fas fa-tag mr-1 mb-2"></i>{{ product.category.friendly_name}}
           </a>
         </p>
         {% endif %} 
         {% if product.rating %}
-        <small class="text-muted"
-          ><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small
+        <small class="text-muted mb-2"
+          ><i class="fas fa-star mr-1 "></i>{{ product.rating }} / 5</small
         >
         {% else %}
-        <small class="text-muted">No Rating</small>
+        <small class="text-muted mb-2">No Rating</small>
         {% endif %} 
-        <div class="favourite-section">
-          {% if is_favourite%}
-            <a href="{% url 'product_favourite_list' id=product.id %}">
-              <i class="fas fa-heart fa-lg"></i>
-            </a>
-          {% else %}
-            <a href="{% url 'product_favourite_list' id=product.id %}">
-              <i class="far fa-heart fa-lg"></i>
-            </a>
-          {% endif %}
-        </div>
+        
         {% if request.user.is_superuser %}
         <small class="ml-3">
           <a href="{% url 'edit_product' product.id %}">Edit</a> |

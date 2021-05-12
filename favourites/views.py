@@ -13,22 +13,23 @@ from django.conf import settings
 def favourites(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
-    if product.favourites.filter(id=request.user.ide).exist():
+    
+    if product.favourites.filter(id=request.user.id).exists():
         product.favourites.remove(request.user)
     else:
         product.favourites.add(request.user)
         
     
-    return render(request, 'favourites/favourites.html')
+    return redirect(reverse('product_detail', args=[product.id]))
 
-
+@login_required
 def product_favourite_list(request):
     user=request.user
-    favourite_products = user.favourite.all()
+    favourite_products = user.favourites.all()
     
     context = {
-        'favourite_products': favourite_products
+        'is_favourite': favourite_products
     }
 
-    return render(request, 'favourites/favourites.html', context)
+    return render(request, 'favourites/product_favourite_list.html', context)
     
