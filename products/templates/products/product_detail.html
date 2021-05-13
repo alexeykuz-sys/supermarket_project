@@ -2,8 +2,14 @@
 {% load static %} 
 {% block page_header %} 
 
+{% block extracss %}
+    <link rel="stylesheet" href="{% static 'products/products.css' %}">
+{% endblock %}
+
 {% include 'includes/navbar.html'%} 
 {% endblock %} 
+
+
 
 {% block content %}
 
@@ -63,24 +69,24 @@
         <p class="lead mb-0 text-left font-weight-bold">
           £{{ product.price }}
         </p>
+        <div class="category-rating-wrapper">
         {% if product.category %}
-        <p class="small mt-1 mb-2">
-          <a
-            class="text-muted"
-            href="{% url 'products' %}?category={{ product.category.name }}"
-          >
-            <i class="fas fa-tag mr-1 mb-2"></i>{{ product.category.friendly_name}}
-          </a>
-        </p>
+          <p class="small mt-1 mb-2">
+            <a
+              class="text-muted"
+              href="{% url 'products' %}?category={{ product.category.name }}"
+            >
+              <i class="fas fa-tag mr-1 mb-2"></i>{{ product.category.friendly_name}}
+            </a>
+          </p>
         {% endif %} 
-        {% if product.rating %}
-        <small class="text-muted mb-2"
-          ><i class="fas fa-star mr-1 "></i>{{ product.rating }} / 5</small
-        >
-        {% else %}
-        <small class="text-muted mb-2">No Rating</small>
-        {% endif %} 
-        
+          {% if product.rating %}
+          <small class="text-muted mb-2"><i class="fas fa-star mr-1 ">
+          </i>{{ product.rating }} / 5</small>
+          {% else %}
+          <small class="text-muted mb-2">No Rating</small>
+          {% endif %} 
+        </div>
         {% if request.user.is_superuser %}
         <small class="ml-3">
           <a href="{% url 'edit_product' product.id %}">Edit</a> |
@@ -126,9 +132,29 @@
     </form>
                 
     </div>
-      <div class="product-description mb-5 mt-md-5">
+    <div class="description-review-wrapper">
+      <input type="submit" class="btn add-btn w-25" id='description-btn' value="Description">
+      <input type="submit" id="review-btn" class="btn add-btn w-25" value="Reviews">
+      <div class=" card w-50 product-description active mb-5 mt-md-5" id="description">
           <p class="mb-0">{{ product.description }}</p>
       </div>
+      <div class=" card w-50 product-reviews mb-5 mt-md-5" id="reviews">
+        {% if reviews %}
+            <div id="productReview" class="review-wrapper">
+              {% for review in reviews %}                           
+              <div class="text-center col-12 col-lg-6">
+                  <hr>  
+                  <p>{{review.user}} - <i class="fas fa-star"></p>
+                  <p>  dnlbl</p>
+              </div>                            
+          {% endfor %}   
+            </div>
+        {% else %}
+            <p class="card-text">This product hasn't been rated yet.</p>
+        {% endif %}
+            <a href="" class="text-link"><i class="fas fa-plus"></i> Add review</a>
+    </div>
+    </div>
   </div>
 </div>
   {% endblock %}
@@ -136,4 +162,27 @@
 {% block postloadjs %}
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
+<script>
+let reviewBtn = document.getElementById('review-btn');
+let reviewsRef = document.getElementById('reviews');
+let descriptionBtn = document.getElementById('description-btn');
+let descriptionRef = document.getElementById('description');
+
+function reviewHandler(){
+    reviewsRef.classList.add('active');
+    descriptionRef.classList.remove('active')
+}
+
+reviewBtn.addEventListener('click', reviewHandler)
+
+
+function descriptionHandler(){
+  descriptionRef.classList.add('active');
+  reviewsRef.classList.remove('active');
+}
+
+descriptionBtn.addEventListener('click', descriptionHandler)
+
+
+</script>
 {% endblock %}

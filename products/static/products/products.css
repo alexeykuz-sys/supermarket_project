@@ -1,0 +1,18 @@
+#reviews {
+    display: none;
+    
+}
+
+#reviews.active {
+    display: flex;
+}
+
+#description {
+    display: none;
+    
+}
+
+
+#description.active {
+    display: flex;
+}
