@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container main-section-container margin-header-wrapper">
+    <div class="row">
+        <div class="col-12">
+            {% if messages %}
+                <div class="message-container">
+                    {% for message in messages %}
+                        {% with message.level as level %}
+                            <p class="mb-0">
+                                {% if level == 25 %}
+                                    <i class="far fa-check-circle"></i> 
+                                {% endif %}
+                                {{message}}
+                            </p>
+                        {% endwith %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+
+        <div class="col-12 text-center extra-margin-top ">
+            <hr>
+            <h2 class="logo-font">Add Review</h2>
+            <hr>
+        </div>
+    </div>
+    <div class="row ">
+        <div class="col-12 col-md-10 offset-md-1 text-center extra-margin-bottom">
+            <form method="POST" action="{% url 'add_review' product.id %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                <label for="add_review_rating" class=" requiredField">Rating / 5<span class="asteriskField">*</span> </label>
+                <div class="input-group mb-3">
+                    <div class="btn" id="decreaseAddReviewQuantity">
+                            <span><i class="fas fa-minus fa-sm"></i></span>
+                        </div>  
+                       <input type="number" name="review_rating" value="0" min="0" max="5" class="text-center numberinput form-control" required="" id="add_review_rating">
+                        <div class="btn" id="increaseAddReviewQuantity" >
+                            <span><i class="fas fa-plus fa-sm"></i></span>
+                        </div>
+                    </div>
+
+                    <label for="id_review_content" class=" requiredField"> Review content<span class="asteriskField">*</span> </label>
+                    <div class="input-group mb-3">
+                        <textarea name="review_content" cols="40" rows="10" class="textarea form-control" required="" id="id_review_content" value="{{r.review_content}}">{{r.review_content}}</textarea>
+                     </div>
+
+                    <div class="text-center extra-margin-bottom extra-margin-top">
+                        <div>
+                            <button class="btn action-btn btn-lg rounded-0 mb-3 col-12 col-lg-6 " type="submit">Add Review <i class="fas fa-chevron-right"></i> </button>
+                        </div>
+                    <div>
+                        <a class="btn second-btn btn-lg rounded-0 mb-2 col-12 col-lg-6" href="{% url 'product_detail' product.id %}"><i class="fas fa-chevron-left"></i>  Cancel</a>
+                    </div> 
+                </div>    
+            </form>
+        </div>
+    </div>
+</div>
+{% include 'includes/footer.html' %}
+{% endblock %}

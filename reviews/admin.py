@@ -1,15 +1,16 @@
 from django.contrib import admin
-from .models import Review
+from reviews.models import Review
 
 
 class ReviewsAdmin(admin.ModelAdmin):
     list_display = (
-        'form',
-        'reviews',
+        'product',
+        'user',
+        'date_added'
+        
 
     )
 
-    ordering = ('-reviews',)
 
 
 admin.site.register(Review, ReviewsAdmin)

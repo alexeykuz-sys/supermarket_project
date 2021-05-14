@@ -27,7 +27,6 @@
     <input type="hidden" name="redirect_url" value="{{ request.path }}">
   </div>
   <div class="row">
-    
     <div class="col-sm-12 col-md-3 offset-md-1">
       {% if product.image %}
       <a href="{% url 'product_detail' product.id %}">
@@ -129,31 +128,57 @@
                 </div>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
               </div>
-    </form>
+        </form>
                 
     </div>
-    <div class="description-review-wrapper">
-      <input type="submit" class="btn add-btn w-25" id='description-btn' value="Description">
-      <input type="submit" id="review-btn" class="btn add-btn w-25" value="Reviews">
-      <div class=" card w-50 product-description active mb-5 mt-md-5" id="description">
-          <p class="mb-0">{{ product.description }}</p>
+    <div class="row">
+      <div class="col-12 col-md-6">
+        <div class="description-review-wrapper">
+          <input type="submit" class="btn add-btn w-25" id='description-btn' value="Description">
+          <input type="submit" id="review-btn" class="btn add-btn w-25" value="Reviews">
+          <div class=" card product-description active mb-5 mt-md-5" id="description">
+              <p class="mb-0">{{ product.description }}</p>
+          </div>
+          <div class=" card product-reviews mb-5 mt-md-5" id="reviews">
+              
+            {% for review in reviews %}
+              
+                <div id="productReview" class="review-wrapper">
+                                      
+                  <div class="text-center col-12 col-lg-6">
+                      <hr>  
+                      <p>{{review.user}}</p>
+                      <p>Date: {{ review.date_added|date:'M d, Y'}}</p>
+                      {{review.comment}}
+                  </div>                            
+                
+                </div>
+           
+                <p class="card-text">This product hasn't been rated yet.</p>
+              
+            {% endfor %}
+            {% if request.user.is_authenticated %}
+                <a href="" class="text-link"><i class="fas fa-plus" id="add-review"></i> Add review</a>
+            {% endif %}
+          </div>
+        </div>
       </div>
-      <div class=" card w-50 product-reviews mb-5 mt-md-5" id="reviews">
-        {% if reviews %}
-            <div id="productReview" class="review-wrapper">
-              {% for review in reviews %}                           
-              <div class="text-center col-12 col-lg-6">
-                  <hr>  
-                  <p>{{review.user}} - <i class="fas fa-star"></p>
-                  <p>  dnlbl</p>
-              </div>                            
-          {% endfor %}   
+      <div class="col-12 col-md-6">
+        <div class="review-field" id="review-field">
+          <form action="{% url 'add_review' product.id %}" method="post">
+            {% csrf_token %}
+            <div class="field">
+              <label for="comment">Content</label>
+              <div class="control">
+                <textarea name="comment" id="textarea" cols="30" rows="10"></textarea>
+              </div>
+              <div class="control">
+                <button class="btn btn-success">Submit</button>
+              </div>
             </div>
-        {% else %}
-            <p class="card-text">This product hasn't been rated yet.</p>
-        {% endif %}
-            <a href="" class="text-link"><i class="fas fa-plus"></i> Add review</a>
-    </div>
+          </form>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -167,7 +192,8 @@ let reviewBtn = document.getElementById('review-btn');
 let reviewsRef = document.getElementById('reviews');
 let descriptionBtn = document.getElementById('description-btn');
 let descriptionRef = document.getElementById('description');
-
+let addReviewBtn = document.getElementById('add-review')
+let reviewField = document.getElementById('review-field')
 function reviewHandler(){
     reviewsRef.classList.add('active');
     descriptionRef.classList.remove('active')
@@ -182,6 +208,14 @@ function descriptionHandler(){
 }
 
 descriptionBtn.addEventListener('click', descriptionHandler)
+
+
+function addReviewHandler(){
+  reviewField.classList.toggle('active');
+  
+}
+
+addReviewBtn.addEventListener('click', addReviewHandler)
 
 
 </script>

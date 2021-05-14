@@ -4,23 +4,21 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from django.db.models.functions import Lower
 
+from reviews.models import Review
+from reviews.forms import ReviewForm
+from profiles.models import UserProfile
 from .models import Product, Category
 from .forms import ProductForm
 
 def all_products(request):
     """ A view to show all products """
-    
     products = Product.objects.all()
     query = None
     categories = None
     sort = None
     direction = None
     
-    
-        
-    
-    if request.GET:
-        
+    if request.GET:    
         if 'sort' in request.GET:
             sortkey = request.GET['sort']
             sort = sortkey
@@ -56,10 +54,8 @@ def all_products(request):
         'products': products,
         'search_term': query,
         'current_categories': categories, 
-        'current_sorting': current_sorting,
-        
+        'current_sorting': current_sorting,   
     }
-    
     return render(request, 'products/products.html', context)
 
 def product_detail(request, product_id):
@@ -68,19 +64,17 @@ def product_detail(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     is_favourite = False
     
-    
+    # add to favourites
     if product.favourites.filter(id=request.user.id).exists():
         is_favourite = True
     
-    
-    
+    reviews = Review.objects.filter(product=product_id)
         
     context = {
         'product': product,
-        'is_favourite': is_favourite,
-        
+        'is_favourite': is_favourite, 
+        'reviews': reviews,
     }
-    
     return render(request, 'products/product_detail.html', context)
 
 

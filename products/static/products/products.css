@@ -16,3 +16,11 @@
 #description.active {
     display: flex;
 }
+
+.review-field{
+    display: block;
+}
+
+.review-field.active{
+    display: flex;
+} 
