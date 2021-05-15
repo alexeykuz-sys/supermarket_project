@@ -11,29 +11,29 @@ A live version of the site is available [LIVE SITE]()
 
 **Contents**
 
-1.  [UX Development](https://github.com/alexeykuz-sys/ms4-ecommerce#ux-development)
+1.  [UX Development](https://github.com/alexeykuz-sys/supermarket_project#ux-development)
     
 2.  [Project Goals](https://github.com/alexeykuz-sys/ms4-ecommerce#project-goals)
     
-3.  [UX Requirements](https://github.com/alexeykuz-sys/ms4-ecommerce#ux-requirements)
+3.  [UX Requirements](https://github.com/alexeykuz-sys/supermarket_project#ux-requirements)
     
-4.  [Developer's goal](https://github.com/alexeykuz-sys/ms4-ecommerce#developers-goals)
+4.  [Developer's goal](https://github.com/alexeykuz-sys/supermarket_project#developers-goals)
     
-5.  [Users](https://github.com/alexeykuz-sys/myRecipe-MS3#users)
+5.  [Users](https://github.com/alexeykuz-sys/supermarket_project#users)
     
-6.  [User Goals](https://github.com/alexeykuz-sys/myRecipe-MS3#user-goals)
+6.  [User Goals](https://github.com/alexeykuz-sys/supermarket_project#user-goals)
     
-7.  [User Stories](https://github.com/alexeykuz-sys/myRecipe-MS3#user-stories)
+7.  [User Stories](https://github.com/alexeykuz-sys/supermarket_project#user-stories)
     
-8.  [Design Choices](https://github.com/alexeykuz-sys/myRecipe-MS3#design-choices)
+8.  [Design Choices](https://github.com/alexeykuz-sys/supermarket_project#design-choices)
     
-    -   [Fonts](https://github.com/alexeykuz-sys/myRecipe-MS3#fonts)
-    -   [Icons](https://github.com/alexeykuz-sys/myRecipe-MS3#icons)
-    -   [Colours](https://github.com/alexeykuz-sys/myRecipe-MS3#colours)
-    - [Database design](https://github.com/alexeykuz-sys/myRecipe-MS3#database-design)
-    -   [Features and Future Releases](https://github.com/alexeykuz-sys/myRecipe-MS3#features-and-future-releases)
-    -   [Technologies used](https://github.com/alexeykuz-sys/myRecipe-MS3#technologies-used)
-9.  [Manual Testing](https://github.com/alexeykuz-sys/myRecipe-MS3#manual-testing)
+    -   [Fonts](https://github.com/alexeykuz-sys/supermarket_project#fonts)
+    -   [Icons](https://github.com/alexeykuz-sys/supermarket_project#icons)
+    -   [Colours](https://github.com/alexeykuz-sys/supermarket_project#colours)
+    - [Database design](https://github.com/alexeykuz-sys/supermarket_project#database-design)
+    -   [Features and Future Releases](https://github.com/alexeykuz-sys/supermarket_project#features-and-future-releases)
+    -   [Technologies used](https://github.com/alexeykuz-sys/supermarket_project#technologies-used)
+9.  [Manual Testing](https://github.com/alexeykuz-sys/supermarket_project#manual-testing)
     
 10.  [Testing User Stories](https://github.com/alexeykuz-sys/myRecipe-MS3#testing-user-stories)
     
@@ -46,6 +46,6 @@ A live version of the site is available [LIVE SITE]()
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg0MTUyMjI1NiwtMTc1Mzk3NjI2MCw4Mz
-E2NTc1MjMsLTQyMjgxNzg2NF19
+eyJoaXN0b3J5IjpbODk1Njc1OTE1LC0xNzUzOTc2MjYwLDgzMT
+Y1NzUyMywtNDIyODE3ODY0XX0=
 -->
