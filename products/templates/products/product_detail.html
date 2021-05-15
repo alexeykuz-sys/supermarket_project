@@ -132,50 +132,66 @@
                 
     </div>
     <div class="row">
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-5">
+        <div class="btn-wrapper">
+          <input type="submit" class="btn add-btn " id='description-btn' value="Description">
+          <input type="submit" id="review-btn" class="btn add-btn ms-5" value="Reviews">
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12 col-md-5">
         <div class="description-review-wrapper">
-          <input type="submit" class="btn add-btn w-25" id='description-btn' value="Description">
-          <input type="submit" id="review-btn" class="btn add-btn w-25" value="Reviews">
-          <div class=" card product-description active mb-5 mt-md-5" id="description">
+          <div class=" product-description active mb-5" id="description">
               <p class="mb-0">{{ product.description }}</p>
           </div>
-          <div class=" card product-reviews mb-5 mt-md-5" id="reviews">
-              
+          <div class=" product-reviews mb-5" id="reviews">
+            <div class="comment-button ">
+              {% if request.user.is_authenticated %}
+              <a href="{% url 'add_review' product.id %}"type='submit' id="add-review" class="link-danger text-end"><i class="fas fa-plus" ></i> Add review</a>
+  
+
+              {% endif %}
+            </div>
             {% for review in reviews %}
-              
-                <div id="productReview" class="review-wrapper">
-                                      
-                  <div class="text-center col-12 col-lg-6">
-                      <hr>  
-                      <p>{{review.user}}</p>
-                      <p>Date: {{ review.date_added|date:'M d, Y'}}</p>
-                      {{review.comment}}
-                  </div>                            
-                
+              <div id="productReview" class="review-wrapper">
+                <div class="text-start">
+                    <hr>  
+                    <p>Username: {{review.user}}</p>
+                    <p>Date: {{ review.date_added|date:'d M Y'}}</p>
+                    <h4 class="fw-bold">
+                      {{review.title}}
+                    </h4>
+                    <br>
+                    <p class="fw-normal review-text">{{review.comment}}</p>
                 </div>
-           
-                <p class="card-text">This product hasn't been rated yet.</p>
-              
+                {% if request.user.is_superuser %}
+                  <small class="ml-3">
+                    <a href="{% url 'edit_review' product.id review.id %}">Edit</a> |
+                    <a class="text-danger" href="">Delete</a>
+                  </small>
+                {% endif %}                          
+              </div>
+            {% empty %}
+              <p class="text-muted">This product hasn't been rated yet.</p>
             {% endfor %}
-            {% if request.user.is_authenticated %}
-                <a href="" class="text-link"><i class="fas fa-plus" id="add-review"></i> Add review</a>
-            {% endif %}
           </div>
         </div>
       </div>
-      <div class="col-12 col-md-6">
+      <div class="col-12 col-md-6 offset-md-1">
         <div class="review-field" id="review-field">
           <form action="{% url 'add_review' product.id %}" method="post">
             {% csrf_token %}
-            <div class="field">
-              <label for="comment">Content</label>
-              <div class="control">
-                <textarea name="comment" id="textarea" cols="30" rows="10"></textarea>
-              </div>
-              <div class="control">
-                <button class="btn btn-success">Submit</button>
-              </div>
-            </div>
+            <fieldset class="form-fields">
+              <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Title</legend> -->
+              {{ form.title | as_crispy_field }}
+              <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Comments</legend> -->
+              {{ form.comment | as_crispy_field }}
+            </fieldset>
+            <div class="text-right">
+              <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a>
+              <button class="btn form-btn ms-1" type="submit">Add Comment</button>
+          </div>
           </form>
         </div>
       </div>
@@ -212,7 +228,7 @@ descriptionBtn.addEventListener('click', descriptionHandler)
 
 function addReviewHandler(){
   reviewField.classList.toggle('active');
-  
+  console.log(reviewField)
 }
 
 addReviewBtn.addEventListener('click', addReviewHandler)

@@ -63,17 +63,20 @@ def product_detail(request, product_id):
     
     product = get_object_or_404(Product, pk=product_id)
     is_favourite = False
+    form = ReviewForm()
     
     # add to favourites
     if product.favourites.filter(id=request.user.id).exists():
         is_favourite = True
     
     reviews = Review.objects.filter(product=product_id)
+    
         
     context = {
         'product': product,
         'is_favourite': is_favourite, 
         'reviews': reviews,
+        'form': form,
     }
     return render(request, 'products/product_detail.html', context)
 
@@ -139,7 +142,7 @@ def edit_product(request, product_id):
 
 @login_required
 def delete_product(request, product_id):
-    """ Delete a product from the store """
+    """ Delete a review from the product view """
     if not request.user.is_superuser:
         messages.error(request, 'Sorry, only store owners can do that.')
         return redirect(reverse('home'))

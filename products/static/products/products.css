@@ -1,3 +1,9 @@
+.product-reviews {
+    display: flex;
+    flex-direction: column;
+    
+    
+}
 #reviews {
     display: none;
     
@@ -5,6 +11,7 @@
 
 #reviews.active {
     display: flex;
+    
 }
 
 #description {
@@ -17,10 +24,15 @@
     display: flex;
 }
 
-.review-field{
-    display: block;
-}
+/* .review-field{
+    display: none;
+} */
 
 .review-field.active{
     display: flex;
 } 
+
+.review-text{
+    font-size: 20   px;
+
+}

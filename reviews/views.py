@@ -15,10 +15,12 @@ from .forms import ReviewForm
 def review_list(request, product_id):
     product = get_object_or_404(Product, pk=product_id)
     reviews = Review.objects.all().filter(
-        product=product, date_lte=timezone.now().order_by('-date'))
+        product=product_id).order_by('-date_added')
     context = {
         'product': product,
+        'title': title,
         'reviews': reviews,
+        
     }
     
     return render(request,reviews.html, context)
@@ -30,14 +32,54 @@ def add_review(request, product_id):
         if request.method == 'POST':
             form = ReviewForm(request.POST)
             if form.is_valid():
-                data = form.save(commit=False)
-                data.comment = request.POST['comment']
-                data.user = UserProfile.objects.get(user=request.user)
-                data.product = product
-                data.save()
+                form = form.save(commit=False)
+                form.title = request.POST['title']
+                form.comment = request.POST['comment']
+                form.user = UserProfile.objects.get(user=request.user)
+                form.product = product
+                form.save()
                 return redirect(reverse('product_detail', args=(product_id,)))
+                
+            
         else:
             form = ReviewForm()
         return redirect(reverse('product_detail', args=(product_id,)))
     else:
-        return redirect('profiles/profile.html')
+        return redirect('home/index.html')
+    
+    
+@login_required
+def edit_review(request,product_id, review_id):
+    if request.user.is_authenticated:
+        product = get_object_or_404(Product, pk=product_id)
+        review = Review.objects.get(product=product, pk=review_id)
+        
+        if request.user == review.user:
+            if request.method == 'POST':
+                form = ReviewForm(request.POST, instanct=review)
+                if form.is_valid():
+                    form = form.save(commit=False)
+                    form.save()
+                    return redirect(reverse('product_detail', args=(product_id),))   
+            else:
+                form = ReviewForm(instance=review)
+            return redirect('reviews/edit_review.html', {'form':form})
+        else:
+            return redirect(reverse('product_detail', args=(product_id),))
+    else:
+        return redirect('home/index.html')
+        
+
+
+@login_required
+def delete_review(request, product_id):
+    """ Delete a review from the product view """
+    if not request.user.is_superuser:
+        messages.error(request, 'Sorry, only store owners can do that.')
+        return redirect(reverse('home'))
+
+    review = get_object_or_404(Review, product_id)
+    
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('product_detail', args=(product_id,)))
