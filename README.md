@@ -51,14 +51,15 @@ A live version of the site is available [LIVE SITE]()
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#ux-development)UX Development
 
-Fresh and Fat website will help users to have online access to their groceries and to be able to purchase them and have them delivered withn 30 min.
+Fresh and Fast website will help users to have online access to their groceries and to be able to purchase them and have them delivered withn 30 min.
 The primary goal of the website is to have easy access to grocery store.
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#project-goals)Project goals
 
-The purpose of this project is to create website that allow users to access, use, choose, add, edit and delete, order products from on. The website has to be easy to navigate and use, with clear purpose of the buttons and screen space.
+The purpose of this project is to create website that allow users to access, use, choose, add, edit and delete, order products from onlinse supermarket.
+The website has to be easy to navigate and use, with clear purpose of the buttons and screen space.
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#ux-requirements)UX requirements
+# [](https://github.com/alexeykuz-sys/supertmaket-projecr#ux-requirements)UX requirements
 
 The website targets the individuals interested to transfer their paper recorded recipes into digital form and copy recipes availalbe on other websites to one single hub.
 # [](https://github.com/alexeykuz-sys/myRecipe-MS3#developers-goals)Developer's Goals
@@ -76,6 +77,6 @@ Individuals interested to keep their recipes in digital form
 The users goal is to identify application allowing them to have access to the recipe any time anywhere.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDMzMjY0MzU3LDc0NzAzOTM3LC0xNzUzOT
-c2MjYwLDgzMTY1NzUyMywtNDIyODE3ODY0XX0=
+eyJoaXN0b3J5IjpbMTgzMDQ1MTI1Nyw3NDcwMzkzNywtMTc1Mz
+k3NjI2MCw4MzE2NTc1MjMsLTQyMjgxNzg2NF19
 -->
