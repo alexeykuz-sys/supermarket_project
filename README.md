@@ -35,17 +35,17 @@ A live version of the site is available [LIVE SITE]()
     -   [Technologies used](https://github.com/alexeykuz-sys/supermarket_project#technologies-used)
 9.  [Manual Testing](https://github.com/alexeykuz-sys/supermarket_project#manual-testing)
     
-10.  [Testing User Stories](https://github.com/alexeykuz-sys/myRecipe-MS3#testing-user-stories)
+10.  [Testing User Stories](https://github.com/alexeykuz-sys/supermarket_project#testing-user-stories)
     
-11.  [Bugs and De-bugging](https://github.com/alexeykuz-sys/myRecipe-MS3#bugs-and-debugging)
+11.  [Bugs and De-bugging](https://github.com/alexeykuz-sys/supermarket_project#bugs-and-debugging)
 
- 12.  [Project Deployment](https://github.com/alexeykuz-sys/myRecipe-MS3#project-deployment)
+ 12.  [Project Deployment](https://github.com/alexeykuz-sys/supermarket_project#project-deployment)
     
-13.  [Credits](https://github.com/alexeykuz-sys/myRecipe-MS3#credits)
+13.  [Credits](https://github.com/alexeykuz-sys/supermarket_project#credits)
     
-14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
+14.  [Acknowledgements](https://github.com/alexeykuz-sys/supermarket_project#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODk1Njc1OTE1LC0xNzUzOTc2MjYwLDgzMT
+eyJoaXN0b3J5IjpbNjQ0Mjg1MTQwLC0xNzUzOTc2MjYwLDgzMT
 Y1NzUyMywtNDIyODE3ODY0XX0=
 -->
