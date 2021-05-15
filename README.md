@@ -61,15 +61,15 @@ The website has to be easy to navigate and use, with clear purpose of the button
 
 # [](https://github.com/alexeykuz-sys/supermaket-project#ux-requirements)UX requirements
 
-The website targets the users that dont want to spend time in the shop and prefer to have easy access to tall products. They want to 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#developers-goals)Developer's Goals
+The website targets the users that dont want to spend time in the shop and prefer to have easy access to tall products. They want to have fast and clear navigation pane that includes the user's favourite products to be able to purchase them with max of 3 clicks. 
+# [](https://github.com/alexeykuz-sys/supermarket_project#developers-goals)Developer's Goals
 
 The site owner has the following goals:
 
 -   To provide users with clean and easy way to create recipes
 -   To give users control over the ingredients and methods of cooking.
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#users)Users:
+# [](https://github.com/alexeykuz-sys/supermarket_project#users)Users:
 
 Individuals interested to keep their recipes in digital form
 
@@ -77,6 +77,6 @@ Individuals interested to keep their recipes in digital form
 The users goal is to identify application allowing them to have access to the recipe any time anywhere.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU1ODc0NjU2NSw3NDcwMzkzNywtMTc1Mz
+eyJoaXN0b3J5IjpbMTg4NTY5NTM5MSw3NDcwMzkzNywtMTc1Mz
 k3NjI2MCw4MzE2NTc1MjMsLTQyMjgxNzg2NF19
 -->
