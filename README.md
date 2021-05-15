@@ -45,7 +45,39 @@ A live version of the site is available [LIVE SITE]()
     
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/supermarket_project#acknowledgements)
 
+
+
+====
+
+# [](https://github.com/alexeykuz-sys/supermarket-project#ux-development)UX Development
+
+Fres and Fat website will help users to have all their recipes  in one place, easily accessible.
+As user, I have always wanted to have a single point of access to all recipes my family has collected throuout the years, which until now were written on pieces of paper.
+
+The primary goal of the website is to have easy access to recipes, digitise and save for the future.
+
+# [](https://github.com/alexeykuz-sys/myRecipe-MS3#project-goals)Project goals
+
+The purpose of this project is to create website that allow users to create, use, read, edit and delete their favourite recipes. The website has to be easy to navigate and use, with clear purpose of the buttons and screen space.
+
+# [](https://github.com/alexeykuz-sys/myRecipe-MS3#ux-requirements)UX requirements
+
+The website targets the individuals interested to transfer their paper recorded recipes into digital form and copy recipes availalbe on other websites to one single hub.
+# [](https://github.com/alexeykuz-sys/myRecipe-MS3#developers-goals)Developer's Goals
+
+The site owner has the following goals:
+
+-   To provide users with clean and easy way to create recipes
+-   To give users control over the ingredients and methods of cooking.
+
+# [](https://github.com/alexeykuz-sys/myRecipe-MS3#users)Users:
+
+Individuals interested to keep their recipes in digital form
+
+# [](https://github.com/alexeykuz-sys/myRecipe-MS3#user-goals)User goals:
+The users goal is to identify application allowing them to have access to the recipe any time anywhere.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjQ0Mjg1MTQwLC0xNzUzOTc2MjYwLDgzMT
-Y1NzUyMywtNDIyODE3ODY0XX0=
+eyJoaXN0b3J5IjpbMjA1ODQ3MTM5MCwtMTc1Mzk3NjI2MCw4Mz
+E2NTc1MjMsLTQyMjgxNzg2NF19
 -->
