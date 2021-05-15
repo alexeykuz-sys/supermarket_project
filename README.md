@@ -59,9 +59,9 @@ The primary goal of the website is to have easy access to grocery store.
 The purpose of this project is to create website that allow users to access, use, choose, add, edit and delete, order products from onlinse supermarket.
 The website has to be easy to navigate and use, with clear purpose of the buttons and screen space.
 
-# [](https://github.com/alexeykuz-sys/supertmaket-projecr#ux-requirements)UX requirements
+# [](https://github.com/alexeykuz-sys/supermaket-project#ux-requirements)UX requirements
 
-The website targets the individuals interested to transfer their paper recorded recipes into digital form and copy recipes availalbe on other websites to one single hub.
+The website targets the users that dont want to spend time in the shop and prefer to have easy access to tall products. They want to 
 # [](https://github.com/alexeykuz-sys/myRecipe-MS3#developers-goals)Developer's Goals
 
 The site owner has the following goals:
@@ -77,6 +77,6 @@ Individuals interested to keep their recipes in digital form
 The users goal is to identify application allowing them to have access to the recipe any time anywhere.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgzMDQ1MTI1Nyw3NDcwMzkzNywtMTc1Mz
+eyJoaXN0b3J5IjpbLTU1ODc0NjU2NSw3NDcwMzkzNywtMTc1Mz
 k3NjI2MCw4MzE2NTc1MjMsLTQyMjgxNzg2NF19
 -->
