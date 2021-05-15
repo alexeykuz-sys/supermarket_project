@@ -11,13 +11,13 @@ A live version of the site is available [LIVE SITE]()
 
 **Contents**
 
-1.  [UX Development](https://github.com/alexeykuz-sys/#ux-development)
+1.  [UX Development](https://github.com/alexeykuz-sys/ms4-ecommerce#ux-development)
     
-2.  [Project Goals](https://github.com/alexeykuz-sys/supermarket#project-goals)
+2.  [Project Goals](https://github.com/alexeykuz-sys/ms4-ecommerce#project-goals)
     
-3.  [UX Requirements](https://github.com/alexeykuz-sys/myRecipe-MS3#ux-requirements)
+3.  [UX Requirements](https://github.com/alexeykuz-sys/ms4-ecommerce#ux-requirements)
     
-4.  [Developer's goal](https://github.com/alexeykuz-sys/myRecipe-MS3#developers-goals)
+4.  [Developer's goal](https://github.com/alexeykuz-sys/ms4-ecommerce#developers-goals)
     
 5.  [Users](https://github.com/alexeykuz-sys/myRecipe-MS3#users)
     
@@ -46,6 +46,6 @@ A live version of the site is available [LIVE SITE]()
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NDMxNDg4MTMsLTE3NTM5NzYyNjAsOD
-MxNjU3NTIzLC00MjI4MTc4NjRdfQ==
+eyJoaXN0b3J5IjpbMTg0MTUyMjI1NiwtMTc1Mzk3NjI2MCw4Mz
+E2NTc1MjMsLTQyMjgxNzg2NF19
 -->
