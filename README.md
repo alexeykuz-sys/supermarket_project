@@ -1,4 +1,6 @@
 
+Fast and Fresh Supermarket is a ecommerce online supermarket. The website is built to allow users to access,  .The site is designed to be easy to navigate and use, promoting a simple layout with minimal but effective and purposeful features.
+
 
 **Project Requirements:**
 
@@ -44,5 +46,6 @@ A live version of the site is available [LIVE SITE](https://my-recipe-ms3.heroku
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODMxNjU3NTIzLC00MjI4MTc4NjRdfQ==
+eyJoaXN0b3J5IjpbLTE4MjYzNTgyODIsODMxNjU3NTIzLC00Mj
+I4MTc4NjRdfQ==
 -->
