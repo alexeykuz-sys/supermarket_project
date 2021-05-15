@@ -6,14 +6,14 @@ Fast and Fresh Supermarket is a ecommerce online supermarket. The website is bui
 
 Build an interactive front-end website that responds to user actions and alters the way the site displays data/information.
 
-Required Technologies : HTML, CSS, JavaScript, Python+Flask, MongoDB. 
-A live version of the site is available [LIVE SITE](https://my-recipe-ms3.herokuapp.com/)  
+Required Technologies : HTML, CSS, JavaScript, Python, Django, Amazon 3S. 
+A live version of the site is available [LIVE SITE]()  
 
 **Contents**
 
-1.  [UX Development](https://github.com/alexeykuz-sys/myRecipe-MS3#ux-development)
+1.  [UX Development](https://github.com/alexeykuz-sys/#ux-development)
     
-2.  [Project Goals](https://github.com/alexeykuz-sys/myRecipe-MS3#project-goals)
+2.  [Project Goals](https://github.com/alexeykuz-sys/supermarket#project-goals)
     
 3.  [UX Requirements](https://github.com/alexeykuz-sys/myRecipe-MS3#ux-requirements)
     
@@ -46,6 +46,6 @@ A live version of the site is available [LIVE SITE](https://my-recipe-ms3.heroku
 14.  [Acknowledgements](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3NTM5NzYyNjAsODMxNjU3NTIzLC00Mj
-I4MTc4NjRdfQ==
+eyJoaXN0b3J5IjpbLTE3NDMxNDg4MTMsLTE3NTM5NzYyNjAsOD
+MxNjU3NTIzLC00MjI4MTc4NjRdfQ==
 -->
