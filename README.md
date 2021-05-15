@@ -115,9 +115,17 @@ The webpages consist of :
 7.  Shopping bag page - shopping bag provides the list of all products to be purchased and separate part showing the total cost of the shopping bag, delivery cost and total charge. It is possible to edit shopping bag, i.e. edit the items quantity, delete items from the bag.
 8.  Checkout page - checkout page, provides user infirmation and delivery address, credit card details and total amount to be charged.
 9.  Checkoutsuccess page provides user with the summary of the purchased products, invoice number and email confirmation.
-10. The website provides user with various widget notifications, giving user positive visual experience and simplify navigation and shopping expereince.
+10. The website provides user with various widget notifications, giving user positive visual experience and simplify navigation and shopping expereinccreate recipes
+-   To give users control over the ingredients and methods of cooking.
+
+# [](https://github.com/alexeykuz-sys/supermarket_project#users)Users:
+
+Individuals interested to keep their recipes in digital form
+
+# [](https://github.com/alexeykuz-sys/supermarket_project#user-goals)User goals:
+The users goal is to identify application allowing them to have access to the recipe any time anywhere.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4NTY5NTM5MSw3NDcwMzkzNywtMTc1Mz
-k3NjI2MCw4MzE2NTc1MjMsLTQyMjgxNzg2NF19
+eyJoaXN0b3J5IjpbLTEzNzE5NTU3MTYsNzQ3MDM5MzcsLTE3NT
+M5NzYyNjAsODMxNjU3NTIzLC00MjI4MTc4NjRdfQ==
 -->
