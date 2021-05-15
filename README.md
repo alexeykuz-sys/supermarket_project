@@ -51,7 +51,7 @@ A live version of the site is available [LIVE SITE]()
 
 # [](https://github.com/alexeykuz-sys/supermarket-project#ux-development)UX Development
 
-Fres and Fat website will help users to have all their recipes  in one place, easily accessible.
+Fresh and Fat website will help users to have online access to their groceries and to be able to purchase them and have them delivered withn 30 min.
 As user, I have always wanted to have a single point of access to all recipes my family has collected throuout the years, which until now were written on pieces of paper.
 
 The primary goal of the website is to have easy access to recipes, digitise and save for the future.
@@ -78,6 +78,6 @@ Individuals interested to keep their recipes in digital form
 The users goal is to identify application allowing them to have access to the recipe any time anywhere.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA1ODQ3MTM5MCwtMTc1Mzk3NjI2MCw4Mz
-E2NTc1MjMsLTQyMjgxNzg2NF19
+eyJoaXN0b3J5IjpbNzQ3MDM5MzcsLTE3NTM5NzYyNjAsODMxNj
+U3NTIzLC00MjI4MTc4NjRdfQ==
 -->
