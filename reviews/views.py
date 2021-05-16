@@ -69,7 +69,7 @@ def edit_review(request, product_id, review_id):
         else:
             return redirect('product_detail', product_id)
     else:
-        return redirect('home/index.html')
+        return redirect('account/login.html')
         
 
 

@@ -179,7 +179,7 @@
               </div>
               {% if request.user.is_superuser %}
                 <small class="ml-3">
-                  <a href="{% url 'edit_review' product.id review.id %}">Edit</a> |
+                  <a href="{% url 'editreview' product.id review.id %}">Edit</a> |
                   <a class="text-danger" href="">Delete</a>
                 </small>
               {% endif %}                          

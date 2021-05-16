@@ -23,7 +23,7 @@
                 <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
                    
-                        {{ form|as_crispy_field }}
+                        {{ field |as_crispy_field }}
                        
                     <div class="text-right">
                         <a class="btn btn-outline-dark" href="">Cancel</a>
