@@ -6,6 +6,7 @@ class ReviewsAdmin(admin.ModelAdmin):
     list_display = (
         'title',
         'user',
+        'comment',
         'date_added'
         
 

@@ -69,7 +69,7 @@ def product_detail(request, product_id):
     if product.favourites.filter(id=request.user.id).exists():
         is_favourite = True
     
-    reviews = Review.objects.filter(product=product_id)
+    reviews = Review.objects.filter(product=product_id).order_by('-date_added')
     
         
     context = {

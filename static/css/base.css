@@ -228,6 +228,7 @@ input[name="q"]::placeholder {
 
 /* Products page */
 
+.add-container,
 .edit-container,  
 .product-management-container,
 .products-container,
