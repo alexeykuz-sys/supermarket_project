@@ -4,12 +4,10 @@ from reviews.models import Review
 
 class ReviewsAdmin(admin.ModelAdmin):
     list_display = (
-        'title',
         'user',
+        'date_added',
+        'title',
         'comment',
-        'date_added'
-        
-
     )
 
 admin.site.register(Review, ReviewsAdmin)

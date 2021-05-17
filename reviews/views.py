@@ -44,7 +44,7 @@ def add_review(request, product_id):
                 return redirect('product_detail', product_id)
         else:
             form = ReviewForm()
-        return render(request, 'products/product_detail.html', {'form': form})
+        return redirect(reverse('product_detail', args=(product_id,)))
     else:
         return redirect('accounts:login.html')
 
