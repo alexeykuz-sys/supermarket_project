@@ -177,10 +177,10 @@
                   <br>
                   <p class="fw-normal review-text">{{review.comment}}</p>
               </div>
-              {% if request.user.is_superuser %}
+              {% if request.user.is_authenticated %}
                 <small class="ml-3">
-                <a href="">Edit</a> |
-                  <a class="text-danger" href="">Delete</a>
+                <a href="{% url 'edit_review' product.id review.id %}">Edit</a> |
+                  <a class="text-danger" href="{% url 'delete_review' product.id review.id %}" onclick="return confirm('Are you sure you want to delete review?') ">Delete</a>
                 </small>
               {% endif %}                          
             </div>
