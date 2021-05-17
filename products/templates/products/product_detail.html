@@ -162,7 +162,7 @@
         <div class=" product-reviews mb-5" id="reviews">
           <div class="comment-button ">
             {% if request.user.is_authenticated %}
-            <a href="{% url 'add_review' product.id %}"type='submit' id="add-review" class="link-danger text-end"><i class="fas fa-plus" ></i> Add review</a>
+            <a href="{% url 'add_review' product.id %}" type='submit' id="add-review" class="link-danger text-end"><i class="fas fa-plus" ></i> Add review</a>
             {% endif %}
           </div>
           {% for review in reviews %}
@@ -179,7 +179,7 @@
               </div>
               {% if request.user.is_superuser %}
                 <small class="ml-3">
-                  <a href="{% url 'editreview' product.id review.id %}">Edit</a> |
+                <a href="">Edit</a> |
                   <a class="text-danger" href="">Delete</a>
                 </small>
               {% endif %}                          
@@ -191,7 +191,7 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-6 offset-md-3">
+      <div class="col-12 col-md-6">
           <hr>
           <h5 class="text-muted">Add Reivew</h5>
           <hr>
@@ -201,7 +201,7 @@
   <div class="row">
       <div class="col-12 col-md-6 offset-md-1">
           <div class="review-field" id="review-field">
-            <form action="{% url 'add_review' product.id %}" method="post">
+            <form action="{% url 'add_review' product.id %}" method="POST">
               {% csrf_token %}
               <fieldset class="form-fields">
                 <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Title</legend> -->
@@ -212,7 +212,7 @@
               <div class="text-right">
                 <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a>
                 <button class="btn form-btn ms-1" type="submit">Add Comment</button>
-            </div>
+              </div>
             </form>
           </div>
         </div> 
