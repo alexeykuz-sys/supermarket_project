@@ -41,11 +41,13 @@ def add_review(request, product_id):
                 form.user = UserProfile.objects.get(user=request.user)
                 form.product = product
                 form.save()
+                messages.success(request, 'You successfully added review!')
                 return redirect('product_detail', product_id)
         else:
             form = ReviewForm()
         return redirect(reverse('product_detail', args=(product_id,)))
     else:
+        messages.error(request, 'Sorry, only login user can do that.')
         return redirect('home')
 
 @login_required
@@ -62,8 +64,7 @@ def edit_review(request, product_id, review_id):
                 if form.is_valid():
                     form = form.save(commit=False)
                     form.save()
-                    messages.success(request, 'You successfully added review!')
-                    
+                    messages.success(request, 'You successfully edited review!')
                     return redirect('product_detail', product_id)
             else:
                 form = ReviewForm(instance=review)

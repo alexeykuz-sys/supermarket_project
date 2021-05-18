@@ -123,7 +123,7 @@
                     </div>
                 </div>
               </div>
-                <div class="col-12 w-50 mt-5 btn-wrapper">    
+                <div class="col-12 w-50 mt-5">    
                   <input type="submit" class="btn add-btn" value="Add to Bag">
                 </div>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
@@ -133,10 +133,8 @@
     </div>
     <div class="row">
       <div class="col-12 col-md-5">
-        <div class="btn-wrapper">
-          <input type="submit" class="btn add-btn " id='description-btn' value="Description">
-          
-        </div>
+        <h2 class= "mt-5" id='description-btn'>Description</h2>
+        <hr>
       </div>
     </div>
     <div class="row">
@@ -150,21 +148,25 @@
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-5">
-        <div class="btn-wrapper">
-          <input type="submit" id="review-btn" class="btn add-btn ms-5" value="Reviews">
-          
+      <div class="col-12 col-md-6">
+        <div class="review-btn-wrapper">
+          <h2 class=" w-50">Reviews</h2> 
+          <div class="comment-button ">
+            {% if request.user.is_authenticated %}
+            <a id="add-review" class="btn shopping-btn text-end"><i class="fas fa-plus" ></i> Add review</a>
+            {% endif %}
+          </div>
         </div>
+      </div>
+      <div class="col-12 col-md-6 review-header" id="review-header">
+        <h2>Add Reivew</h2>
+        <hr>
       </div>
     </div>
     <div class="row">
-      <div class="col-12 col-md-12">
+      <div class="col-12 col-md-6">
         <div class=" product-reviews mb-5" id="reviews">
-          <div class="comment-button ">
-            {% if request.user.is_authenticated %}
-            <a href="{% url 'add_review' product.id %}" type='submit' id="add-review" class="link-danger text-end"><i class="fas fa-plus" ></i> Add review</a>
-            {% endif %}
-          </div>
+         
           {% for review in reviews %}
             <div id="productReview" class="review-wrapper">
               <div class="text-start">
@@ -189,34 +191,25 @@
           {% endfor %}
         </div>  
       </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-6">
-          <hr>
-          <h5 class="text-muted">Add Reivew</h5>
-          <hr>
+      <div class="col-12 col-md-6 review-form" id="review-form">
+        <div class="review-field" id="review-field">
+          <form action="{% url 'add_review' product.id %}" method="POST">
+            {% csrf_token %}
+            <fieldset class="form-fields">
+              <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Title</legend> -->
+              {{ form.title | as_crispy_field }}
+              <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Comments</legend> -->
+              {{ form.comment | as_crispy_field }}
+            </fieldset>
+            <div class="text-right">
+              <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a>
+              <button class="btn form-btn ms-1" id='submit-review-btn' type="submit">Add Review</button>
+            </div>
+          </form>
+        </div>
       </div>
-  </div>
-
-  <div class="row">
-      <div class="col-12 col-md-6 offset-md-1">
-          <div class="review-field" id="review-field">
-            <form action="{% url 'add_review' product.id %}" method="POST">
-              {% csrf_token %}
-              <fieldset class="form-fields">
-                <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Title</legend> -->
-                {{ form.title | as_crispy_field }}
-                <!-- <legend class="fieldset-label small text-dark px-2 w-auto">Comments</legend> -->
-                {{ form.comment | as_crispy_field }}
-              </fieldset>
-              <div class="text-right">
-                <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a>
-                <button class="btn form-btn ms-1" type="submit">Add Comment</button>
-              </div>
-            </form>
-          </div>
-        </div> 
-  </div>
+      
+    </div>
   </div>
 </div>
   {% endblock %}
@@ -225,34 +218,19 @@
 {{ block.super }}
 {% include 'products/includes/quantity_input_script.html' %}
 <script>
-let reviewBtn = document.getElementById('review-btn');
-let reviewsRef = document.getElementById('reviews');
-let descriptionBtn = document.getElementById('description-btn');
-let descriptionRef = document.getElementById('description');
-let addReviewBtn = document.getElementById('add-review')
-let reviewField = document.getElementById('review-field')
-function reviewHandler(){
-    reviewsRef.classList.add('active');
-    descriptionRef.classList.remove('active')
+
+  const reviewHeader = document.getElementById('review-header')
+  const addReviewBtn = document.getElementById('add-review');
+  const reviewForm = document.getElementById('review-form');
+  const submitReviewBtn = document.getElementById('submit-review-btn');
+
+  function reviewHandler(){
+  reviewHeader.classList.toggle('active')
+  reviewForm.classList.toggle('active');
 }
 
-reviewBtn.addEventListener('click', reviewHandler)
-
-
-function descriptionHandler(){
-  descriptionRef.classList.add('active');
-  reviewsRef.classList.remove('active');
-}
-
-descriptionBtn.addEventListener('click', descriptionHandler)
-
-
-function addReviewHandler(){
-  reviewField.classList.toggle('active');
-  console.log(reviewField)
-}
-
-addReviewBtn.addEventListener('click', addReviewHandler)
+addReviewBtn.addEventListener('click', reviewHandler)
+submitReviewBtn.addEventListener('click', reviewHandler)
 
 
 </script>

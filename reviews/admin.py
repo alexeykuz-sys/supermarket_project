@@ -4,6 +4,7 @@ from reviews.models import Review
 
 class ReviewsAdmin(admin.ModelAdmin):
     list_display = (
+        'product',
         'user',
         'date_added',
         'title',

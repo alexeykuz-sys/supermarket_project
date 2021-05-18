@@ -3,36 +3,40 @@
     flex-direction: column;
     
     
-/* }
-#reviews {
-    display: none;
-    
 }
-
-#reviews.active {
-    display: flex;
-    
-}
-
-#description {
-    display: none;
-    
-}
-
-
-#description.active {
-    display: flex;
-} */
-
-/* .review-field{
-    display: none;
-} */
-
-.review-field.active{
-    display: flex;
-} 
 
 .review-text{
     font-size: 20   px;
 
 }
+
+.tab{
+    background-color: #1d7ba9;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5px;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 18px;
+    padding: 10px;
+    font-weight: normal;
+    flex: 1 1 auto;
+    justify-content: center;
+    display: flex;
+}
+
+.review-header,
+.review-form{
+    display: none;
+}
+
+.review-header.active,
+.review-form.active {
+    display: block;
+}
+
+.review-btn-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-beteween;
+  }
