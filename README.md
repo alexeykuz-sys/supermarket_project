@@ -133,18 +133,18 @@ I opted to use Lato font for my website, which is one of the most popular fonts 
 
 The colours were determined by the pallet of Cooler website:
 
--   For navbar #c0c650  [![navbar]()]()
+-   For navbar #c0c650  [![navbar](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/acid_green.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/acid_green.PNG)
 
--   For buttons #1d7ba9.  [![Buttons](https://github.com/alexeykuz-sys/myRecipe-MS3/blob/master/static/colors/bgColor.png)](https://github.com/alexeykuz-sys/myRecipe-MS3/blob/master/static/colors/bgColor.png?raw=true)
+-   For buttons #1d7ba9.  [![Buttons](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/celadon_blue.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/celadon_blue.PNG)
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#database-design)Database design
 
-????
+Database design is [here](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/supermarket-dbdesigner.pdf)
 
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#features-and-future-releases)Features and Future Releases
 
-View my wireframes  [here](https://github.com/alexeykuz-sys/myRecipe-MS3/blob/master/wireframes.md). It's website with a landing page, register, log in/out and recipe editing page.  
+View my wireframes  [here](https://github.com/alexeykuz-sys/supermarket_project/blob/master/wireframes.md).  
 
 Features to implement:
 
