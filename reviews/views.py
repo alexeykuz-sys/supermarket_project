@@ -70,7 +70,7 @@ def edit_review(request, product_id, review_id):
                 form = ReviewForm(instance=review)
             return render(request, 'reviews/edit_review.html', {'form':form})
         else:
-            messages.error(request, 'Sorry, only login user can do that.')
+            messages.error(request, 'Sorry, only review owner can do that.')
             return redirect('product_detail', product_id)
     else:
         return redirect('home')
@@ -84,7 +84,7 @@ def delete_review(request, product_id, review_id):
         product = Product.objects.get (pk=product_id)
         review = Review.objects.get(product=product, pk=review_id)
 
-        if request.user.userprofile == review.user:
+        if request.user.is_superuser:
             review.delete()
             messages.success(request, 'You successfully deleted your review!')
 

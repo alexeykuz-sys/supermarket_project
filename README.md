@@ -179,47 +179,51 @@ Features to implement:
 All functions were tested for different screen sizes.
 - **Landing Page**
 
-Once website loaded, user sees the hero image, with login/register buttons and option to browse all products.
+Once website loaded, user sees the hero image, with login/register buttons and option to browse all products. Tested login and register button and link to all products page.
 
-- **All Products Page**
-All products page contains the navbar with search option and underneath the menu with options to choose the categories of products and favourites.
-Search section allow user to search products. I input a word in search and pressed search. If such word exist in products, the product will be shown n the sceen underneath. 
- Each product card has image, product name, category and rating. Each product card is clickable and give access to product details page with.
+- **Navbar**
+
+All page contains the navbar. Navbar contains Logo, search option and links to Profile and Shopping Bag. All links were checked.
+
+The search section allows user to search products. User can search by the words in the name of the product or category. If such a word exists in products, the product will be shown n the screen underneath. 
+
+Underneath the main menu, the user can click the menu list of the product categories and favourites, which were tested.
+
+-**All Products Page**
  
+All products page shows the cards of each product available in the store. Each card contains a product image, name, category, rating and the button add to the bag. Tested: product image leads to the product details page, category links offer a view of all products in the clicked category and the add to bag button adds the product to the shopping bag. The relevant notification pops up next to the shopping bag confirming user action.
+The top of the page offers a link home, shows the number of available products. There is also a sort selector that sorts the product by price, name, category, in ascending and descending or alphabetical order, or price range. All links were checked and work well!
+
 -**Single Product Page**
 
-The single product page gives all user access to the product details, add to bag button and users reviews. In addition, access to Edit and Delete functions.
-I checked that these functions appear only for logged in admin.  
-I checked that Edit buttons opens the edit page, where admin can edit all recipe fields and save recipe.
-I checked that delete button, delets product.
-Login user can post, edit and delete their reviews.
-Admin can also delete inappropriate reviews.
+The single product page gives all user access to the product details, add to bag button and users reviews. 
+In addition, access to product Edit and Delete functions, which appear only for logged in admin.  
+I checked that Edit buttons opens the edit page, where admin only can edit all recipe fields and save recipe.
+The user can choose the quantity of the product he wish to purchase and add it to the shopping bag.It was tested and works well.
+The review section of the page consist of the list of all reviews left by users. Review owners can edit their reviews. Admin can delete any review left by any customer.
+Add Review button opens a review form on the right side from the review list column and user can write their review and post it, after which they get notification and form disappears.
  
--**Log In**
+-**My Account**
 
-I checked that log in button redirects to log in page.
-I created own account that complied with min requirements and successfully logged in and received corresponding flash notification.
-I also checked if the log in form gives visual and text warning if i input wrong information or less symbols than required.
-
--**Log Out**
-
-I checked that log out buttons redirects you back to log in page.
-
--**Register**
-
-I checked that register button is visible to all guest, not logged in users. I checked that user gets relevant notifications if user tries to register with less symbols or wrond symbols.
-I checked that user get notification if he tries to register with username that already exists in database.
-I checked that user get notification and redirected to profile page.
-
--**Profile page**
-
-Profile page offers users editable delivery information and the list of the previous orders.
-
-- **Shopping Bag Page**
+My Account icon in the navbar opens a dropdown menu with the links to Product Management, My Profile and Logout.
+The Product Management link was tested and is visible only to the website admin. and allows adding products to the store.
+My profile and logout checked and are visible to all login users. My profile link opens the profile page where the user can update his delivery information and see previous orders. Logout link redirects the user to the sign-out card that either returns user to the store or signs him out from the store and redirects to the home page. 
+The relevant on scree notifications pop-ups depending on the user actions
 
 
-- **Checkout Page**
+-**Shopping Bag**
 
+The shopping bag icon appears in the navbar once the user added products to the shopping bag and shows the amount spent. In addition, a small widget pops up in the top corner of the screen, showing the user the item purchased, a button allowing the user to view the bag and the button either prompting the user to keep shopping if total spending is less than the minimum required or checkout button.
+The shop has a minimum spend of £15 rule and it shows up on all checkout buttons to make sure the user can't access the checkout button unless the £15 threshold reached. Once reached the button change text to checkout and allows the user to proceed with the payment.
+
+-**Checkout Page**
+
+The checkout page has two columns. The left side offers the user details and delivery information, which prefilled in from the Profile page. The right side show all the products added to the shopping bag and the total cost including the delivery price. 
+At the bottom of the page, the user has space to add the credit card payment details, which are not saved by the store and the user has to insert them each time he purchases in the store.
+Underneath user has two options, either adjust the bag or complete the order. 
+Both buttons were tested.  
+Once the user presses the complete the order button he is redirected to the checkout success page with the details of the order number and total spent. The relevant email sent and receive with the order confirmation.
+Back to the shop button was tested and leads back to all products page.
 
 # [](https://github.com/alexeykuz-sys/myRecipe-MS3#testing-user-stories)Testing User Stories
 

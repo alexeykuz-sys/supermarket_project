@@ -1,58 +1,37 @@
 <div class="collapse navbar-collapse" id="main-nav">
     
-    <ul class="navbar-nav w-auto mx-auto">
-        <li class="nav-item d-block d-md-none">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}" id="home-link">
-                All Products
-            </a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}" id="home" >
+    <ul class="navbar-nav  mx-auto category-menu">
+        
+        <li class="nav-item "  >
+            <a class=" fw-bold nav-link text-dark me-5 " href="{% url 'products' %}" id="home" date-hover='home'>
                 Home
             </a>
-            <!-- <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
-                <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
-                <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
-                <a href="{% url 'products' %}" class="dropdown-item">All Products</a>
-            </div> -->
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Fruits" id="fruits-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item  "  >
+            <a class=" fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Fruits" id="fruits-link" date-hover='fruits'>
                 Fruits
              </a>
-            <!-- <div class="dropdown-menu border-0" aria-labelledby="clothing-link">
-                <a href="{% url 'products' %}?category=activewear,essentials" class="dropdown-item">Activewear &amp; Essentials</a>
-                <a href="{% url 'products' %}?category=jeans" class="dropdown-item">Jeans</a>
-                <a href="{% url 'products' %}?category=shirts" class="dropdown-item">Shirts</a>
-                <a href="{% url 'products' %}?category=activewear,essentials,jeans,shirts" class="dropdown-item">All Clothing</a>
-            </div> -->
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Meat" id="meat-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item  ">
+            <a class=" fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Meat" id="meat-link" date-hover='meat'>
                 Meat
              </a>
-            <!-- <div class="dropdown-menu border-0" aria-labelledby="homeware-link">
-                <a href="{% url 'products' %}?category=bed_bath" class="dropdown-item">Bed &amp; Bath</a>
-                <a href="{% url 'products' %}?category=kitchen_dining" class="dropdown-item">Kitchen &amp; Dining</a>
-                <a href="{% url 'products' %}?category=bed_bath,kitchen_dining" class="dropdown-item">All Homeware</a>
-            </div> -->
         </li>
 
-        <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Diary" id="diary-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item  ">           
+            <a class=" fw-bold nav-link text-dark me-5"  href="{% url 'products' %}?category=Diary" id="diary-link" date-hover='diary'>
                Diary
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Fish" id="Fish-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item ">
+            <a class=" fw-bold nav-link text-dark me-5" href="{% url 'products' %}?category=Fish" id="Fish-link" date-hover='fish'>
                Fish
             </a>
         </li>
-        <li class="nav-item dropdown">
-            <a class="logo-font click-link fw-bold nav-link text-dark me-5" href="{% url 'product_favourite_list' %}" id="favourite-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <li class="nav-item ">
+            <a class="fw-bold nav-link text-dark me-5"  href="{% url 'product_favourite_list' %}" id="favourite-link" date-hover='favourites' >
                Favourites
             </a>
         </li>
@@ -63,18 +42,7 @@
 
 {% block postloadjs %}
     
-    <script type="text/javascript">
-      
-    const menuLink = document.querySelectorAll('.logo-font')
     
-    menuLink.forEach(link => {
-        console.log(link)
-        link.addEventListener('click', ()=> {
-            link.classList.add('.click-link');
-        })
-    })
 
-
-	</script>
     
 {% endblock %}

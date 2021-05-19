@@ -89,7 +89,7 @@
         {% if request.user.is_superuser %}
         <small class="ml-3">
           <a href="{% url 'edit_product' product.id %}">Edit</a> |
-          <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
+          <a class="text-danger" href="{% url 'delete_product' product.id %}" onclick="return confirm('Are you sure you want to delete peoduct?') ">Delete</a>
         </small>
         {% endif %}
       </div>
@@ -179,10 +179,12 @@
                   <br>
                   <p class="fw-normal review-text">{{review.comment}}</p>
               </div>
-              {% if request.user.is_authenticated %}
+              {% if request.user.is_authenticated  %}
                 <small class="ml-3">
-                <a href="{% url 'edit_review' product.id review.id %}">Edit</a> |
+                  <a href="{% url 'edit_review' product.id review.id %}">Edit</a> 
+                  {% if request.user.is_superuser  %}
                   <a class="text-danger" href="{% url 'delete_review' product.id review.id %}" onclick="return confirm('Are you sure you want to delete review?') ">Delete</a>
+                  {% endif %}
                 </small>
               {% endif %}                          
             </div>
@@ -203,7 +205,7 @@
               {{ form.comment | as_crispy_field }}
             </fieldset>
             <div class="text-right mt-3">
-              <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a>
+              <a class="btn btn-outline-dark " href="{% url 'product_detail' product.id %}">Cancel</a> |
               <button class="btn form-btn ms-1" id='submit-review-btn' type="submit">Add Review</button>
             </div>
           </form>

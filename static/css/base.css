@@ -123,22 +123,43 @@ input[name="q"]::placeholder {
   color: white;
 }
 
-.logo-font:active {
-  
-  border-bottom: #28a745;
+.category-menu *{
+  box-sizing: border-box;
 }
-
-/* .logo-font:active {
+.category-menu  a:before,
+.category-menu a:after {
   position: absolute;
-  bottom: -30%;
-  left: 0;
+  -webkit-transition: all 0.35s ease;
+  transition: all 0.35s ease;
+}
+.category-menu a:before {
+  bottom: 0;
+  display: block;
+  height: 3px;
+  width: 0%;
   content: "";
-  width: 70%;
-  height: 2px;
-  /* visibility: hidden; */
-  /* transition: all 0.25s ease-out; 
-  transform-origin: bottom left;
-} */
+  background-color: #c0c650;
+}
+.category-menu a:after {
+  left: 0;
+  top: 0;
+  padding: 0.5em 0;
+  position: absolute;
+  content: attr(data-hover);
+  color: #ffffff;
+  white-space: nowrap;
+  max-width: 0%;
+  overflow: hidden;
+}
+.category-menu a:hover:before,
+.category-menu .current a:before {
+  opacity: 1;
+  width: 4%;
+}
+.category-menu a:hover:after,
+.category-menu .current a:after {
+  max-width: 4%;
+}
 
 .list-inline-item:not(:last-child) {
   margin-right: 0;
