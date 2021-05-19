@@ -161,8 +161,9 @@ Features to implement:
 
 -   [HTML](https://developer.mozilla.org/en-US/docs/Web/HTML)
 -   [CSS](https://developer.mozilla.org/en-US/docs/Web/CSS)  
-- [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
-- [Python](https://www.python.org/)
+-   [JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+-   [Python](https://www.python.org/)
+-   [jQuery](www.jquery.com)
 
 **Tools & Libraries**
 
@@ -259,65 +260,103 @@ Once a user has logged in, a user sees  new enu options:  Profile and Edit tis g
 -   Upon pressing the edit button, I expect to be redirected to the edit page, which is similar to add recipe button and allows edit all recipe fields.
 -   Upon pressing the delete button, I expect to have the warning appear on my screen, asking if I m sure I want to delete the recipe. I expect to have it if I pressed delete mistakenlyreally wants to delete recipe to reconfirm user's decisision.
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#bugs-and-debugging)Bugs and Debugging
+# [](https://github.com/alexeykuz-sys/supermarket_project#bugs-and-debugging)Bugs and Debugging
 
-Tthere is a bug in line 37 of javascript function, provided by code institute in task app, which i used for my project. Ii couldn't debug it to resolve the issue.
-I have also noticed that error pops up for line 77, refering to modalBtnRef in line 69. It appears only when console checked on any page other than get_recipe. This code applies to button DELETE on get_recipe page and error disappears once get_recipe page is open.
+????
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#project-deployment)Project Deployment
+# [](https://github.com/alexeykuz-sys/supermarket_project#project-deployment)Project Deployment
 
-Hosting on Heroku
+I used VSCODE to build this project.
 
--   This site is hosted using Heroku, deployed directly from the master branch via GitHub. -  [LIVE SITE](https://my-recipe-ms3.herokuapp.com/)
-    
-    -   The following steps were taken to complete the hosting process.
-    
-    1.  Set  **_debug=False_**  in the app.py file.
-    2.  Created a requirements.txt file from the terminal, using  **_pip3 freeze --local > requirements.txt_**, to allow Heroku to detect this project as a python app and any required package dependencies.
-    3.  Created a Procfile using  **_echo web: python app.py > Procfile_**  from the Gitpod terminal so Heroku would be informed on which file runs the app and how to run this project.
-    4.  Created a new Heroku app,  **my-recipe-m3**  and set its region to Europe.
-    5.  Automatic deployment was set up on Heroku - On the app dashboard, in the deploy menu. Connect to GitHub section. The GitHub repository was searched for and connected to the app.
-    6.  In the settings tab on the app dashboard, 'Reveal Config Vars' was used to tell Heroku which variableS are required to run the app. The following config vars were added:
-        -   **_IP_**
-        -   **_PORT_**
-        -   **_SECRET_KEY_**
-        -   **_MONGO_URI_**
-    7.  In GitPod, a check was completed to ensure the master branch was up to date and all commits had been pushed to GitHub, ready for Heroku to deploy.
-    8.  Clicked the  **_Enable Automatic Deploys_**  button located in the  **_Deploy_**  section of Heroku to allow for automatic deploys.
-    9.  Clicked the  **_Deploy Branch_**  button located in the  **_Deploy_**  section of Heroku to finally deploy this project.
-    10.  Clicked the  **_View_**  button to launch this project's app.
-    
-    -   The deployed site on Heroku will update automatically upon new commits to the master branch in the GitHub Repo :  [REPO](https://github.com/alexeykuz-sys/myRecipe-MS3)
-    
-Cloning
+**Local Deployment**
 
-To run this code locally, you can clone this repository directly into the editor of your choice by following the steps below:
+To deploy the project to Github the following steps were taken:
 
-1.  Open Terminal.
-2.  Change the current working directory to the location when you want the cloned directory.
-3.  Type the following into your Terminal:  
-    git clone  [insert link](https://github.com/alexeykuz-sys/myRecipe-MS3)
-4.  Press Enter to create a local clone.
+Created a master branch in Github repository.
+Repository was clone to VScode and local foder was created. 
 
--   To cut ties with this GitHub repository, type git remote rm origin into the terminal.
+**Version Control**
 
-##### [](https://github.com/alexeykuz-sys#for-more-information-regarding-cloning-of-a-repository-click-here)For more information regarding cloning of a repository click  [here](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository).
+Used Git for version control.
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#credits)Credits
+**Development Environment**
 
-### [](https://github.com/alexeykuz-sys/myRecipe-MS3#images)Images
+All code was written on Visual Studio Code.
+
+A virtual environment was created on VSCode to ensure that the packages installed are only installed in the virtual environment folder.
+The code was then pushed to GitHub where it is stored in my Repository.
+To create virtual enviroment I followed the following steps:
+
+- Navigate to the folder of the installed files with cd <path>
+- Create the virtual environment folder with python -m venv venv
+- Activate the virtual environment with venv\Scripts\activate.bat
+
+.Gitignore file was created, where i saved files that should not be pushed to Github:
+
+core.Microsoft*
+core.mongo*
+core.python*
+env.py
+__pycache__/
+*.py[cod]
+node_modules/
+venv
+*.sqlite3
+db.sqlite3
+*.pyc
+.env
+db.json
+
+In addition dotenv was installed to store local variables to ensure safety of the passwords.
+
+The following variables were saved in venv file:
+
+STRIPE_SECRET_KEY
+STRIPE_PUBLIC_KEY
+STRIPE_WH_SECRET
+SECRET_KEY  
+DEVELOPMENT
+
+Install project requirements by typing pip install -r requirements.txt
+
+To deploy project and to run it locally, type python manage.py runserver in the terminal 
+This will open a localhost address, which is provided in the CLI.
+Either copy and paste the url shown below into a new browser tab, or hover over it and click follow link.
+
+**Heroku Deployment**
+
+To deploy the project to Heroku the following steps were taken:
+created a Heroku account @ https://signup.heroku.com/
+Create requirements.txt file in workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
+To install the Heroku command line on Gitpod, use the following command npm install -g heroku
+Using the New buton, Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod application and Heroku that would allow us to push our changes using Git to update the application at any given time.
+To login to Heroku from the CLI, use the command heroku login
+To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
+Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "fist Heroku commit" git push
+Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
+To connect an existing repository from Github to Heroku use the following CLI syntax: heroku git:remote -a [followed by name of Heroku app]
+To push to Heroku Master Branch, then simply use git push heroku master
+To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
+In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku. To do this go to Settings tab > Config Variables and input: AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY; DATABASE_URL; DISABLE_COLLECTSTATIC; EMAIL_ADDRESS; EMAIL_PASSWORD EMAIL_PASSWORD; SECRET_KEY; STRIPE_PUBLISHABLE; STRIPE_SECRET.
+The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
+The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
+Once the build in Heroku is complete, click the Open app button.
+Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser credentials.
+
+
+
+# [](https://github.com/alexeykuz-sys/supermarket_project#credits)Credits
+
+### [](https://github.com/alexeykuz-sys/supermarket_project#images)Images
 
 The images for this app/website were taken from Unsplash:
 
-[Unsplash](https://unsplash.com/s/photos/recipe)
-
-The recipes were taken from:
-[BBC Good Food](https://www.bbcgoodfood.com/)
+[Ocado Zoom](https://zoom.ocado.com/)
 
 I used Code Institute Task Follow up project as a reference and guidance in building this website
-All other images were contributed from personal sources, of which no acknowledgement is required.
 
-## [](https://github.com/alexeykuz-sys/myRecipe-MS3#acknowledgements)Acknowledgements
+
+## [](https://github.com/alexeykuz-sys/supermarket_project#acknowledgements)Acknowledgements
 
 Sites used for information and support
 
@@ -326,11 +365,12 @@ Sites used for information and support
 -   [W3schools](https://www.w3schools.com/)
 -   [CSS Tricks](https://css-tricks.com/)
 -   [JS Commenting](https://jsdoc.app/about-getting-started.html)
--   [MongoDB Documentation](https://docs.atlas.mongodb.com/)
+-   [Django Documentation](https://www.djangoproject.com/)
 -   [Python Documentation](https://docs.python.org/3/)
--   [Reading for Pagination](https://www.thatsoftwaredude.com/content/6125/how-to-paginate-through-a-collection-in-javascript)
+-   [Figma](www.figma.com)
 
-#### [](https://github.com/alexeykuz-sys/myRecipe-MS3#I-received-advice-and-support-from)I received advice and support from
+
+#### [](https://github.com/alexeykuz-sys/supermarket_project#I-received-advice-and-support-from)I received advice and support from
 
 -   Oluwafemi Medale (mentor)
 -   Code Institute - Slack Community. (various students, tutors and mentors)
