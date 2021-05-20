@@ -169,7 +169,6 @@ Features to implement:
 
 -   [Git](https://git-scm.com/)
 -   [Bootstrap](https://getbootstrap.com/)
--   [Icons8](https://icons8.com/)
 -   [Google fonts](https://fonts.google.com/)
 -   [Canva](https://canva.com/)
 -   [Django](https://www.django.com/)
@@ -178,6 +177,115 @@ Features to implement:
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#manual-testing)Manual Testing
 All functions were tested for different screen sizes.
+
+**Navbar**
+
+All Navbar links are coded within the navbar.html and main-nav.html that extends to each html page. The logo is a home link that has been tested and each link (e.g.Product Management, Register, Login; Shopping Bag, Profile, Logout) works correctly. Each link directs the user to the relevant page and the Logout button logs the user out of the site.
+
+**Search Bar**
+
+The Search bar is used to search all available products on the homepage. The search bar is located between logo and my account icon and available on each individual page. Mobile view has search icon, upon click of which search bar opens up.
+The search bar returns items that are related to the search parameters, otherwise no items will be returned. This function works correctly.
+
+**All Products Page**
+
+Each product card contains links to edit productm, delete product and add to bag. Each link works and directs user to relevant page. Delete product link triggers a pop up window to reconfirm deletion and avoid accidental deletion of the product.
+
+**Individual Product Page**
+
+The page containts:
+- Keep Shopping button that returns user to all products page.
+- Category, Edit and Delete links that were tested and work as expected.
+- quantity bar - user can choose how many items he wants to purchase. Tested and it works in the range of 1 to 99. The relevant plus and minus buttons get disabled once min and max allowed number has been reached.
+- Add to bag buttons - adds chosen number of products to the shopping bag
+and relevant widget pops up to confirm the action.
+
+
+**Add Review Buttons**
+
+Within each product page users can see all reviews. It has been tested and returns all the user reviews and ratings in chronological order.
+Add review buttons opens up review form on the side of the page, where user can leave their reviews.
+Each review contains Edit and Delete links. Review owner can edit review only. Review owner and Admin can delete reviews.
+Review form disappears once review has been submited.
+
+Each Customer review returns the Name, Review and the Date. All of these fields are stored in the Django database and linked to the individual product by the Foreign Key and Primary Key. 
+
+**Shopping Bag**
+
+The shopping bag page displays the products that the user has selected to purchase and the total shopping price. The user can amend the quantity of the products to be purchased using the quantity field. The total shopping price updates automatically with the change of the quantity. To remove product from the shopping bag user has to press Remove button. This function has been extensively tested.  
+The Checkout button activates once user reach min spend limit and directs the usher to the Checkout page and the Keep Shopping button takes the user back to the Homepage. All items in shopping bag remains saved in the Cart.
+
+
+**Checkout Page**
+
+The Checkout page displays the products that the user has selected to purchase, their related quantities and prices, and the total shopping price. These elements have been tested and return the correct figures.
+
+**Checkout - User Details Form**
+
+checked that the form returns the information from the user profile page and does not allow user to proceed with payment unless required fields are filled out.
+
+**Checkout - Payment Card Info Form** ?????
+
+The user is able to input their Credit card information to purchase the selected quantities of products. This function has only been tested using Stripes dummy card information that consists of Credit card number 4242424242424242; Security Code 123; Month A month in advance of current month; Year a year in advance of the current year. This functionality has been tested and can be checked in the /admin/home/checkout/orders/ section of the Admin panel. These payments are also visible on the https://dashboard.stripe.com/payments page. This confirms all the payments that have been passed through the system. The payment will not submit through the Submit Payment button if the card information is incorrect.
+
+**Checkout - Submit Payment Button**
+
+Submits the Payment and redirects the user to the checkout success page with the order details and order number. It also confirms that relevant invoice has been sent to user's email. The user then can go back to the shop by using back to the shop button.
+
+**My Account**
+My account tab directs user to Product Management page(available to users ith admin rights), My Profile, Registration, Login and Logout pages.
+
+**Product Management page**
+
+The admin can add products using this page. All fields were tested.
+
+**My Profile Page**
+
+This form allows the usher to update their delivery information. This information will be stored under the 'User' information in the Django database and can be utilised to pre-populate fields in the Checkout page.
+
+
+**Registration Form**
+
+In the Registration Page the user can set up an account by inserting a Username, Email Address, Password and Password Confirmation. The form automatically cross checks the the validity of the Email Address and Password Confirmation. There is an optional link for the user to Sign In if they already have an account.
+
+**Login Page**
+
+A user who has already registered can log in to the site either via the Log in Navbar menu item or on homepage using login button. 
+This page authenticates the user against those stored in the database. A verified user will be logged in otherwise the relevant errors will be presented. There is a Forgotten password link and a link for a user who is not registered.
+
+**Password Reset Page**?????
+
+if a user has prevbiously registered to the site they can insert their email address into the field and reset their password. An email is sent via smtp.gmail.com to the users email address. This functionality has been tested utilising multiple email addresses. The link in the email allows the user to create a new password and confirm. Once completed the user is directed back to the Login Page where they are able to login with thier email address or user name and password.This function has been rigorously tested.
+
+
+
+Travis CI 4.3.0
+
+Travis is utilised through the .travis.yml file to check the integrity of the code. Travis hooks up to Github and Heroku and allows the site owner to view detailed information on intricate production and backend information associated with the site. Any build errors will not pass and the resultant details will be sent to the site owner via email and displayed in the relevant Github page as build:failed.
+
+AWS S3
+
+The AWS S3 allows access to stored files within the site owners AWS bucket that are shared through the users AWS account. The accompanying AWS info is linked through the relavant AWS info in the settings.py file. The testing of this functionality is shown in the availability of the stored data in the post prodution database andsite.
+Responsive / Mobile First design
+
+Each page of the web-site has a Header; Main Section and Footer. These needed to display correctly accross all devices and screen resolutions. primarily checks are required to ensure that the site collapses in to columns in mobile view and that the information is presented in a clear and legible fashion.
+Various methods of testing have been carried out to test the code of the web-site. Continuous testing throughout the development has been implemented to check the quality of the code. The aim is to check the functionality of the code on different devices (mobile, tablet, desktop) with an overall perspective of responsive and mobile first design. The site has been viewed and tested in Firefox, Safari, Chrome Microsoft Edge and Explorer. The devices used to test the site are iPhone 5/SE, Samsung Galaxy, iPad, iPad Pro iPhone X, iPhone 6/7/8, Pixel 2, Pixel 2 XL , Hudle2 and Samsung / Lenovo / HP laptop.
+W3 Nu Html Checker
+
+All .html files require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://validator.w3.org/
+
+W3C CSS Validator
+
+The style.css file requires validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://jigsaw.w3.org/css-validator/validator
+PEP8 Online
+
+The Python (.py) pages require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. http://pep8online.com/
+The final database schema and desktop wireframes for the web-app can be seen in the supporting_docs folder under blindside_brewing_database_schema.png, wireframe1_product_page.png, wireframe2_ Login_page.png, wireframe3_ register_page.png, wireframe4_ cart_page.png and wireframe5_ checkout_page.png. These wireframes and database schema were used initially to plan the site and build around. The opinions of numerous people including my mentor, friends, tutors, chat forums and such like, whom were asked during various stages of the project.
+
+# [](https://github.com/alexeykuz-sys/supermarket_project#testing-user-stories)Testing User Stories
+
+User story testing:
+
 - **Landing Page**
 
 Once website loaded, user sees the hero image, with login/register buttons and option to browse all products. Tested login and register button and link to all products page.
@@ -226,29 +334,18 @@ Both buttons were tested.
 Once the user presses the complete the order button he is redirected to the checkout success page with the details of the order number and total spent. The relevant email sent and receive with the order confirmation.
 Back to the shop button was tested and leads back to all products page.
 
-# [](https://github.com/alexeykuz-sys/myRecipe-MS3#testing-user-stories)Testing User Stories
-
-User story testing:
-
-1. Landing page.
-- The page layout is simple and easy to navigate. It consists of basic colors, which do not distract visitor's attention.
-- Navbar - The lLogo is clear and describes the purpose of the website. It has a link to the home page. 
-Navbar menu has three options: Recipes, Register, and Log in. Each of them leads aing user to the relevantspecifi ages. The rRecipe page shows all recipes published by users. It is available for logged- in and guest users. 
-Once a user has logged in, a user sees  new enu options:  Profile and Edit tis ge. The pProfile page is a simple card with user details. In the future, it will be developed into more detailed information with extra features allowing users to see their own recipes.
-- Footer - simple footer that has links to social media and website slogan. All links open correct pages.
-2. Log In and Log Out pages allow the user to log in/out. Log In page has required fields and check if the user inserted the correct username and password. The uUser receives screen notifications in the case user puts a wrong username or password.
-3. Register page - allows users to register with a username and password. It has a requirement to put min number of symbols and a-z and 0-9.  if users insert fewer symbols, they get a warning notification. If the username already exists, the user gets a warning notification.
-4. Profile page -once the user has successfully logged in, the user is redirected to the profile page. The pProfile page will be set up in the future development of the app.
-5. New Recipe page -  Logged in users have access to this page. The page contains the form which the user has to be filled in. Once the user has finished and pressed the add button, the user receives a flash message of success and the screen redirected to the recipe page.
-6. Logged in users also gain access to Edit and Delete buttons on thein get recipe page. Once the user decides to delete a recipe, the user receives a modal warning if he wants to delete the recipe to reconfirm the user's decision.
 
 #### As a first-time guest visitor:
 
--   Upon visiting the website, I want to see the recipes available with the latest recipes at the top.
--   The navbar should be easy to find and contain links to show all recipes.
--   I should easily search recipes either by specific keywords or category: breakfast, lunch, or dinner.
+-   Upon visiting the website, I want to see the products available in
+    the shop
+-   The navbar should be easy to find and contain links to search bar
+    and my account.
+-   I should easily search products either by specific keywords or category.
 -   I should expect results to show underneath the search field.
--   I should expect to be able to open each recipe and see ingredients and cooking instructionsshotsreie.
+-   I should expect to be able to open each product and see its detailed description.
+- I should easily add product to the shopping bag and choose the quantity
+
 
 #### As a returning visitor:
 
