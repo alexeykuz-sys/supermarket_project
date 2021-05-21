@@ -133,13 +133,13 @@ I opted to use Lato font for my website, which is one of the most popular fonts 
 
 The colours were determined by the pallet of Cooler website:
 
--   For navbar #c0c650  [![navbar](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/acid_green.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/acid_green.PNG)
+-   For navbar #c0c650  [![navbar](https://github.com/alexeykuz-sys/supermarket_project/blob/master/static/pics/acid_green.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/static/pics/acid_green.PNG)
 
--   For buttons #1d7ba9.  [![Buttons](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/celadon_blue.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/celadon_blue.PNG)
+-   For buttons #1d7ba9.  [![Buttons](https://github.com/alexeykuz-sys/supermarket_project/blob/master/static/pics/celadon_blue.PNG)](https://github.com/alexeykuz-sys/supermarket_project/blob/master/static/pics/celadon_blue.PNG)
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#database-design)Database design
 
-Database design is [here](https://github.com/alexeykuz-sys/supermarket_project/blob/master/media/pics/supermarket-dbdesigner.pdf)
+Database design is [here](https://github.com/alexeykuz-sys/supermarket_project/blob/master/static/pics/supermarket-dbdesigner.pdf)
 
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#features-and-future-releases)Features and Future Releases
