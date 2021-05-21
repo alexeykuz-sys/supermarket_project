@@ -11,8 +11,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
-from dotenv import load_dotenv
 import os
+from dotenv import load_dotenv
 import dj_database_url
 
 load_dotenv()
@@ -55,13 +55,11 @@ INSTALLED_APPS = [
     'profiles',
     'favourites',
     'reviews',
-    
+
     #others
-    
+
     'crispy_forms',
     'storages',
-    
-    
 ]
 
 MIDDLEWARE = [
@@ -91,7 +89,7 @@ TEMPLATES = [
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
-                 'django.contrib.messages.context_processors.messages',
+                'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
                 'bag.contexts.bag_contents',
             ],
@@ -198,7 +196,7 @@ if 'USE_AWS' in os.environ:
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
         'CacheControl': 'max-age=94608000',
     }
-    
+
     AWS_STORAGE_BUCKET_NAME = 'ms4-supermarket-project'
     AWS_S3_REGION_NAME = 'eu-west-1'
     AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
@@ -227,5 +225,3 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'fastandfresh@example.com'
-
-
