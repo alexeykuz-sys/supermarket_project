@@ -7,7 +7,7 @@ Fast and Fresh Supermarket is a ecommerce online supermarket. The website is bui
 Build an interactive front-end website that responds to user actions and alters the way the site displays data/information.
 
 Required Technologies : HTML, CSS, JavaScript, Python, Django, Amazon 3S. 
-A live version of the site is available [LIVE SITE]()  
+A live version of the site is available [LIVE SITE](https://ms4-supermarket-project.herokuapp.com/)  
 
 **Contents**
 
