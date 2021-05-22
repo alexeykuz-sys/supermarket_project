@@ -176,7 +176,8 @@ Features to implement:
 -   [Amazon AWS](https://aws.amazon.com/)
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#manual-testing)Manual Testing
-All functions were tested for different screen sizes.
+
+All functions ad responsiveness were tested for different screen sizes.
 
 **Navbar**
 
@@ -259,29 +260,27 @@ if a user has prevbiously registered to the site they can insert their email add
 
 
 
-Travis CI 4.3.0
+**Travis CI 4.3.0**??
 dfdf
 
 Travis is utilised through the .travis.yml file to check the integrity of the code. Travis hooks up to Github and Heroku and allows the site owner to view detailed information on intricate production and backend information associated with the site. Any build errors will not pass and the resultant details will be sent to the site owner via email and displayed in the relevant Github page as build:failed.
 
-AWS S3
+**AWS S3**
 
-The AWS S3 allows access to stored files within the site owners AWS bucket that are shared through the users AWS account. The accompanying AWS info is linked through the relavant AWS info in the settings.py file. The testing of this functionality is shown in the availability of the stored data in the post prodution database andsite.
-Responsive / Mobile First design
+The AWS S3 allows access to stored files within the site owners AWS bucket that are shared through the users AWS account. The testing of this functionality is shown in the availability of the stored data in the post prodution database andsite.
 
-Each page of the web-site has a Header; Main Section and Footer. These needed to display correctly accross all devices and screen resolutions. primarily checks are required to ensure that the site collapses in to columns in mobile view and that the information is presented in a clear and legible fashion.
-Various methods of testing have been carried out to test the code of the web-site. Continuous testing throughout the development has been implemented to check the quality of the code. The aim is to check the functionality of the code on different devices (mobile, tablet, desktop) with an overall perspective of responsive and mobile first design. The site has been viewed and tested in Firefox, Safari, Chrome Microsoft Edge and Explorer. The devices used to test the site are iPhone 5/SE, Samsung Galaxy, iPad, iPad Pro iPhone X, iPhone 6/7/8, Pixel 2, Pixel 2 XL , Hudle2 and Samsung / Lenovo / HP laptop.
-W3 Nu Html Checker
+**W3 Nu Html Checker**??
 
 All .html files require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://validator.w3.org/
 
-W3C CSS Validator
+**W3C CSS Validator**??
 
 The style.css file requires validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://jigsaw.w3.org/css-validator/validator
-PEP8 Online
+
+**PEP8 Online**???
 
 The Python (.py) pages require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. http://pep8online.com/
-The final database schema and desktop wireframes for the web-app can be seen in the supporting_docs folder under blindside_brewing_database_schema.png, wireframe1_product_page.png, wireframe2_ Login_page.png, wireframe3_ register_page.png, wireframe4_ cart_page.png and wireframe5_ checkout_page.png. These wireframes and database schema were used initially to plan the site and build around. The opinions of numerous people including my mentor, friends, tutors, chat forums and such like, whom were asked during various stages of the project.
+
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#testing-user-stories)Testing User Stories
 
@@ -338,25 +337,16 @@ Back to the shop button was tested and leads back to all products page.
 
 #### As a first-time guest visitor:
 
--   Upon visiting the website, I want to see the products available in
-    the shop
--   The navbar should be easy to find and contain links to search bar
-    and my account.
+-   Upon visiting the website, I want to see the products available in the shop
+-   The navbar should be easy to find and contain links to search bar and my account.
 -   I should easily search products either by specific keywords or category.
 -   I should expect results to show underneath the search field.
 -   I should expect to be able to open each product and see its detailed description.
 - I should easily add product to the shopping bag and choose the quantity
-
-
 #### As a returning visitor:
 
 -   As a returning user, interested in using the website regularly. I want to see clearly, where I can register as a user or log in.
--   Upon signing up, I am redirected to my profile page.
--   The navbar is now showing new menu options to add a new recipe.
--   Now, I can start adding my favorite recipes to the website. I should expect the add new recipe form to be comprehensive but easy to use.
--   I expect to be able to edit and delete recipes I have added to the website. Edit and Delete buttons appear on the recipe page for recipes added by the user.
--   Upon pressing the edit button, I expect to be redirected to the edit page, which is similar to add recipe button and allows edit all recipe fields.
--   Upon pressing the delete button, I expect to have the warning appear on my screen, asking if I m sure I want to delete the recipe. I expect to have it if I pressed delete mistakenlyreally wants to delete recipe to reconfirm user's decisision.
+-   Upon signing up, I want to see my favourite products
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#bugs-and-debugging)Bugs and Debugging
 
