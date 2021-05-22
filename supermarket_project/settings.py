@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'allauth.socialaccount',
-    'allauth.socialaccount.providers.facebook',
+    #'allauth.socialaccount.providers.facebook',
     'home',
     'products',
     'bag',
@@ -225,3 +225,9 @@ STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
 DEFAULT_FROM_EMAIL = 'fastandfresh@example.com'
+
+
+#Facebook login
+
+SOCIAL_AUTH_FACEBOOK_KEY = 579195123040467        # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = '3c4f935c67b29907a69ae13031f3baca'  # App Secret
