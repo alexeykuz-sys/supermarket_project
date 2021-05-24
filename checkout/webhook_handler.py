@@ -89,7 +89,6 @@ class StripeWH_Handler:
                     town_or_city__iexact=shipping_details.address.city,
                     street_address1__iexact=shipping_details.address.line1,
                     street_address2__iexact=shipping_details.address.line2,
-                    county__iexact=shipping_details.address.state,
                     grand_total=grand_total,
                     original_bag=bag,
                     stripe_pid=pid,
@@ -118,7 +117,6 @@ class StripeWH_Handler:
                     town_or_city=shipping_details.address.city,
                     street_address1=shipping_details.address.line1,
                     street_address2=shipping_details.address.line2,
-                    county=shipping_details.address.state,
                     original_bag=bag,
                     stripe_pid=pid,
                 )
