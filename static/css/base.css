@@ -168,7 +168,9 @@ input[name="q"]::placeholder {
 /* Hero image */
 
 .top-image {
-  background: url("/static/pics/supermarket.jpg") no-repeat center center;
+  background-repeat: no-repeat;
+  background-position: center center;
+  
   background-size: cover;
   height: 55vh;
   color: white;
