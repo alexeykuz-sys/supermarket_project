@@ -416,22 +416,110 @@ Either copy and paste the url shown below into a new browser tab, or hover over 
 **Heroku Deployment**
 
 To deploy the project to Heroku the following steps were taken:
-created a Heroku account @ https://signup.heroku.com/
-Create requirements.txt file in workspace for Heroku to understand installation files to run app. From CLI type type pip3 freeze --local > requirements.txt.
-To install the Heroku command line on Gitpod, use the following command npm install -g heroku
-Using the New buton, Create a new app with apropriate title and server in Heroku. This creates a connection between the Gitpod application and Heroku that would allow us to push our changes using Git to update the application at any given time.
-To login to Heroku from the CLI, use the command heroku login
-To get the application up and running a Procfile is required that istructs Heroku which file is the entry point. Use the following command to create this: echo web: python app.py
-Code that is prepared to be pushed from Github to Heroku can be executed following the CLI commands: git add . git commit -m "fist Heroku commit" git push
-Now that the relevant code is pushed to Github, it can also be pushed to Heroku from the chosen branch (e.g. Master)
-To connect an existing repository from Github to Heroku use the following CLI syntax: heroku git:remote -a [followed by name of Heroku app]
-To push to Heroku Master Branch, then simply use git push heroku master
-To scale dynos and run the app in Heroku, use the CLI command: heroku ps:scale web=1
-In order for the server instance on Heroku to know how to run our application, we need to specify a few Config Vars in Heroku. To do this go to Settings tab > Config Variables and input: AWS_ACCESS_KEY_ID; AWS_SECRET_ACCESS_KEY; DATABASE_URL; DISABLE_COLLECTSTATIC; EMAIL_ADDRESS; EMAIL_PASSWORD EMAIL_PASSWORD; SECRET_KEY; STRIPE_PUBLISHABLE; STRIPE_SECRET.
-The following syntax will need to be added to your settings.py file to access the SECRET KEY for the new database URL DATABASES = {'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))}
-The Database can then be migrated to the Heroku Postgres (postgresql) database using the the commands mmakemigrations and migrate from the command line.
-Once the build in Heroku is complete, click the Open app button.
-Objects can then be added to the new postgres database using the Admin Panel and logging in with your superuser credentials.
+- Create a Heroku account at https://signup.heroku.com/
+- Create requirements.txt file in workspace for Heroku to understand installation files to run app. 
+```
+pip3 freeze --local > requirements.txt.
+```
+- To install the Heroku command line on Gitpod, use the following command 
+```
+npm install -g heroku
+```
+- In Heroku click the New Buton and create a new app with apropriate title and server in Heroku. This creates a connection between the VSCODE application and Heroku that would allow us to push our changes using Git to update the application at any given time.
+
+- To login to Heroku from the CLI, use the command
+```
+heroku login
+```
+- Pick a server location that is closest to you.
+
+- Once the app is created click on the resources button and choose the Heroku Postgres to attach a postgres database to your project.
+
+- Make migrations using 
+```
+$ python manage.py migrate
+```
+- After migrations are complete, we need to change database configurations to use Postgres in deployment and sqlite3 in development, as follows:
+```
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
+```
+
+- Enter in all your variables into Heroku's Config Vars.
+```
+AWS_SECRET_ACCESS_KEY	
+AWS_ACCESS_KEY_ID	
+USE_AWS
+```
+
+- In the terminal login to Heroku 
+
+```
+$ heroku login
+```
+
+- To get the application up and running a Procfile is required that istructs Heroku which file is the entry point, Guniorn a (WSGI HTTP Server), dj-databas-url to connect with PostgreSQL and Psycopg(PostgreSQL adapter)
+
+```
+$ pip install Gunicorn, dj-database, Psycopg
+```
+Freeze your requirements
+```
+$ pip freeze > requirements.txt
+```
+
+Add files and commit to github using
+```
+$ git add .
+```
+
+Commit changes to Github
+```
+$ commit -m "Commitment message"
+```
+Now heroku is ready to go, inside the Django setting.py you need to set up the AWS configs so the static files could be connected to AWS
+
+```
+if 'USE_AWS' in os.environ:
+    AWS_STORAGE_BUCKET_NAME = < Your Bucket Name >
+    AWS_S3_REGION_NAME = < Your server location >
+    AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+    AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com'
+    AWS_DEFAULT_ACL = None
+```
+# Static and media files
+```
+    STATICFILES_STORAGE = 'custom_storages.StaticStorage'
+    STATICFILES_LOCATION = 'static'
+    DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
+    MEDIAFILES_LOCATION = 'media'
+    STATIC_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{STATICFILES_LOCATION}/'
+    MEDIA_URL = f'http://{AWS_S3_CUSTOM_DOMAIN}/{MEDIAFILES_LOCATION}/'
+```
+
+- Specifies the hosts that focus can run on
+
+```
+   ALLOWED_HOSTS = ['ms4-supermarket-project.herokuapp.com', '127.0.0.1']
+ ```
+
+- Time to push to Heroku
+```
+$ git push heroku master
+```
+
+When your app is deployed successfully. Click 'Open App' in to top right hand corner of Heroku to open app in browser.
+
 
 
 
