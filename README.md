@@ -149,7 +149,9 @@ View my wireframes  [here](https://github.com/alexeykuz-sys/supermarket_project/
 Features to implement:
 
 -   To add time slots choice 
--   ????
+-   Sale items,
+-   Free delivery option
+
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#technologies-used)Technologies Used
 
@@ -225,9 +227,10 @@ The Checkout page displays the products that the user has selected to purchase, 
 
 checked that the form returns the information from the user profile page and does not allow user to proceed with payment unless required fields are filled out.
 
-**Checkout - Payment Card Info Form** ?????
+**Checkout - Payment Card Info Form**
 
-The user is able to input their Credit card information to purchase the selected quantities of products. This function has only been tested using Stripes dummy card information that consists of Credit card number 4242424242424242; Security Code 123; Month A month in advance of current month; Year a year in advance of the current year. This functionality has been tested and can be checked in the /admin/home/checkout/orders/ section of the Admin panel. These payments are also visible on the https://dashboard.stripe.com/payments page. This confirms all the payments that have been passed through the system. The payment will not submit through the Submit Payment button if the card information is incorrect.
+The user is able to input their credit card information to purchase the selected quantities of products. This function has only been tested using Stripes dummy card information that consists of credit card number 4242424242424242.
+This functionality has been tested and can be checked in the /admin/home/checkout/orders/ section of the Admin panel. These payments are also visible on the https://dashboard.stripe.com/payments page. It was tested with various webhooks and was confirmed that all the payments have been passed through the system. The payment will not submit through the Submit Payment button if the card information is incorrect or user information is not complete.
 
 **Checkout - Submit Payment Button**
 
@@ -254,9 +257,9 @@ In the Registration Page the user can set up an account by inserting a Username,
 A user who has already registered can log in to the site either via the Log in Navbar menu item or on homepage using login button. 
 This page authenticates the user against those stored in the database. A verified user will be logged in otherwise the relevant errors will be presented. There is a Forgotten password link and a link for a user who is not registered.
 
-**Password Reset Page**?????
+**Password Reset Page**
 
-if a user has prevbiously registered to the site they can insert their email address into the field and reset their password. An email is sent via smtp.gmail.com to the users email address. This functionality has been tested utilising multiple email addresses. The link in the email allows the user to create a new password and confirm. Once completed the user is directed back to the Login Page where they are able to login with thier email address or user name and password.This function has been rigorously tested.
+if a user has previously registered to the site they can insert their email address into the field and reset their password. An email is sent via smtp.gmail.com to the users email address. This functionality has been tested utilising multiple email addresses. The link in the email allows the user to create a new password and confirm. Once completed the user has to click button to be redirected back to the Login Page where they are able to login with thier email address or user name and password.This function has been rigorously tested.
 
 
 
@@ -269,17 +272,16 @@ Travis is utilised through the .travis.yml file to check the integrity of the co
 
 The AWS S3 allows access to stored files within the site owners AWS bucket that are shared through the users AWS account. The testing of this functionality is shown in the availability of the stored data in the post prodution database andsite.
 
-**W3 Nu Html Checker**??
+**W3 Html Validator**??
 
-All .html files require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://validator.w3.org/
+All .html were checked with the above validator.
 
 **W3C CSS Validator**??
 
-The style.css file requires validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. https://jigsaw.w3.org/css-validator/validator
 
-**PEP8 Online**???
+**PEP8 Online**
 
-The Python (.py) pages require validation through the online checker. This ensures that the code is more legible and does not contain formatting errors. http://pep8online.com/
+The (.py) files were checked using http://pep8online.com/
 
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#testing-user-stories)Testing User Stories

@@ -1,14 +1,17 @@
+"""
+This script handles webhooks responds
+"""
+import json
+import time
 from django.http import HttpResponse
 from django.core.mail import send_mail
 from django.template.loader import render_to_string
 from django.conf import settings
 
-from .models import Order, OrderLineItem
 from products.models import Product
 from profiles.models import UserProfile
+from .models import Order, OrderLineItem
 
-import json
-import time
 
 
 class StripeWH_Handler:
@@ -16,7 +19,7 @@ class StripeWH_Handler:
 
     def __init__(self, request):
         self.request = request
-    
+
     def _send_confirmation_email(self, order):
         """Send the user a confirmation email"""
         cust_email = order.email
@@ -102,7 +105,7 @@ class StripeWH_Handler:
             self._send_confirmation_email(order)
             return HttpResponse(
                 content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                         'Verified order already in database'),
+                        'Verified order already in database'),
                 status=200)
         else:
             order = None
@@ -147,7 +150,7 @@ class StripeWH_Handler:
         self._send_confirmation_email(order)
         return HttpResponse(
             content=(f'Webhook received: {event["type"]} | SUCCESS: '
-                     'Created order in webhook'),
+                    'Created order in webhook'),
             status=200)
 
     def handle_payment_intent_payment_failed(self, event):
