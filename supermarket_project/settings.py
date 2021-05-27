@@ -73,7 +73,7 @@ MIDDLEWARE = [
     
 ]
 
-X_FRAME_OPTIONS = 'SAMEORIGIN'
+X_FRAME_OPTIONS = 'DENY'
 
 ROOT_URLCONF = 'supermarket_project.urls'
 
