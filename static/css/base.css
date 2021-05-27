@@ -62,23 +62,18 @@ body {
 }
 
 #btt-button {
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
   border-radius: 4px;
   border: 1px solid rgb(207, 207, 207);
-  /* display: none; */
   font-size: 15px;
-  justify-content: space-around;
   -webkit-box-align: center;
   align-items: center;
   font-weight: 600;
-  height: 40px;
-  line-height: 40px;
+  height: 35px;
   padding: 0px 10px;
   position: relative;
-  text-align: center;
   text-decoration: none;
   text-transform: uppercase;
-  white-space: nowrap;
   overflow: hidden;
   background-color: white;
   color: #000;
@@ -107,16 +102,18 @@ body {
   height: 3rem;
 }
 
+.logo-wrapper {
+  flex: 1 1 auto;
+  display: flex;
+  justify-content: center;
+}
+
 .form {
   margin: 5px;
 }
 input[name="q"]::placeholder {
   color: #aab7c4;
 }
-
-/* #delivery-banner {
-  background-color: #1d7ba9;
-} */
 
 .bag-color {
   background-color: #1d7ba9;
@@ -184,7 +181,6 @@ input[name="q"]::placeholder {
 /* login card */
 
 .login-card {
-  /* display: flex; */
   position: absolute;
   top: 25%;
   left: 50%;

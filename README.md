@@ -263,10 +263,10 @@ if a user has previously registered to the site they can insert their email addr
 
 
 
-**Travis CI 4.3.0**??
-dfdf
+**Travis CI**
 
 Travis is utilised through the .travis.yml file to check the integrity of the code. Travis hooks up to Github and Heroku and allows the site owner to view detailed information on intricate production and backend information associated with the site. Any build errors will not pass and the resultant details will be sent to the site owner via email and displayed in the relevant Github page as build:failed.
+There are the options of the more detailed test to run but same needs to be learned.
 
 **AWS S3**
 

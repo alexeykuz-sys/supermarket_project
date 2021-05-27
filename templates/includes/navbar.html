@@ -2,7 +2,7 @@
 
 <header class="fixed-top header-container">
     <div id="topnav" class=" row pt-lg-2 d-lg-flex">
-        <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-start">
+        <div class="col-12 col-lg-4 logo-wrapper">
             <a href="{% url 'home' %}" class="nav-link main-logo-link">
                 <img class='logo' src="{% static 'pics/logo-nav2.png' %}" alt="logo-image" />
             </a>
@@ -24,13 +24,13 @@
         <div class="col-12 col-lg-4 my-auto d-none d-lg-block   py-1 py-lg-0">
             <ul class="list-inline list-unstyled text-center text-lg-end my-0">
                 <li class="list-inline-item dropdown">
-                    <a class="text-dark nav-link" href="#" id="user-options" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="text-dark nav-link" href="#" id="user-options-acc" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <div class="text-center">
                             <div><i class="fas fa-user fa-lg"></i></div>
                             <p class="my-0">My Account</p>
                         </div>
                     </a>
-                    <div class="dropdown-menu border-0" aria-labelledby="user-options">
+                    <div class="dropdown-menu border-0" aria-labelledby="user-options-acc">
                         {% if request.user.is_authenticated %}
                             {% if request.user.is_superuser %}
                                 <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
@@ -71,13 +71,6 @@
             {% include 'includes/main-nav.html' %}
         </nav>
     </div>
-    
-            <!-- <div id="delivery-banner" class="row text-center">
-                <div class="col text-white">
-                    <h4 class="logo-font my-1">Free delivery on orders over £{{ free_delivery_threshold }}!</h4>                
-                </div>            
-            </div> -->
-   
 {% if messages %}
 <div class="message-container">
     {% for message in messages %}
