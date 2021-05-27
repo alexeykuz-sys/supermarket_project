@@ -1,3 +1,6 @@
+"""
+This script allows user to manage checkout process
+"""
 import json
 from django.shortcuts import (
     render, redirect, reverse, get_object_or_404, HttpResponse
@@ -21,6 +24,9 @@ from .forms import OrderForm
 
 @require_POST
 def cache_checkout_data(request):
+    """
+    This function saves  checkout dta in cache
+    """
     try:
         pid = request.POST.get('client_secret').split('_secret')[0]
         stripe.api_key = settings.STRIPE_SECRET_KEY
@@ -32,12 +38,15 @@ def cache_checkout_data(request):
         return HttpResponse(status=200)
     except Exception as e:
         messages.error(request, ('Sorry, your payment cannot be '
-                                 'processed right now. Please try '
-                                 'again later.'))
+                                'processed right now. Please try '
+                                'again later.'))
         return HttpResponse(content=e, status=400)
 
 
 def checkout(request):
+    """
+    This function allows checkout process
+    """
     stripe_public_key = settings.STRIPE_PUBLIC_KEY
     stripe_secret_key = settings.STRIPE_SECRET_KEY
 

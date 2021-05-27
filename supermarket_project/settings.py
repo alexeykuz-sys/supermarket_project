@@ -73,8 +73,6 @@ MIDDLEWARE = [
     
 ]
 
-X_FRAME_OPTIONS = 'DENY'
-
 ROOT_URLCONF = 'supermarket_project.urls'
 
 CRISPY_TEMPLATE_PACK = 'bootstrap4'

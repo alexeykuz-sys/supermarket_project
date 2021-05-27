@@ -1,3 +1,6 @@
+"""
+This script renders url
+"""
 from django.urls import path
 from . import views 
 

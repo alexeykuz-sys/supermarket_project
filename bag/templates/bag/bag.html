@@ -27,8 +27,8 @@
                     </span>
                     <span class="text-uppercase">Keep Shopping</span>
                 </a>
-              </div>
-              <input type="hidden" name="redirect_url" value="{{ request.path }}">
+            </div>
+            <input type="hidden" name="redirect_url" value="{{ request.path }}">
         </div>
 
         <div class="row">
@@ -60,8 +60,6 @@
                                     <p class="bag-product-name">{{ item.product.name }}</p>
                                 </div>
                                 <div class="bag-card-footer ">
-                                    <!-- <div class="row">
-                                        <div class="col-12"> -->
                                     <p class=" product-price">£{{ item.product.price }}</p>
                                     <form class="form  update-form" method="POST" action="{% url 'adjust_bag' item.item_id %}">
                                         {% csrf_token %}
@@ -91,10 +89,7 @@
                                             </div>
                                         </div>
                                     </form>
-                                            <!-- </div>
-                                            </div> -->
                                 </div>
-                                <!-- <a class="update-link text-info "><small>Update</small></a> -->
                                 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>
                             </div>
                         </div>
@@ -115,12 +110,6 @@
                         <h4 class="mt-4">
                         <strong>Grand Total: £{{ grand_total|floatformat:2 }}</strong>
                         </h4>
-                        <!-- {% if free_delivery_delta > 0 %}
-                        <p class="mb-1 text-danger">
-                        You could get free delivery by spending just
-                        <strong>${{ free_delivery_delta }}</strong> more!
-                        </p>
-                        {% endif %} -->
                     </div>
                     <div class="card-footer bag-checkout-card-footer">
                         {% if total < 15 %}
@@ -148,14 +137,6 @@
   {% include 'bag/includes/bag-quantity-input-script.html' %}
 
   <script type="text/javascript">
-
-    // Update quantity on click
-    //$('.update-link').click(function(e) {
-      //  $('form').submit(); 
-        //console.log('.update-form')
-    //})
-    
-
     // Remove item and reload on click
     $(".remove-item").click(function (e) {
       var csrfToken = "{{ csrf_token }}";

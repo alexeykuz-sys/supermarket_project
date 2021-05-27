@@ -17,15 +17,11 @@
                 <hr>
             </div>
         </div>
-
         <div class="row">
-           
             <div class="col-12 col-md-6 offset-md-3">
                 <form method="POST" action="" class="form mb-2" enctype="multipart/form-data">
                     {% csrf_token %}
-                   
                         {{ form| crispy }}
-                       
                     <div class="text-right mt-3">
                         <a class="btn btn-outline-dark" href="">Cancel</a>
                         <button class="btn form-btn ms-1" type="submit">Update Review</button>

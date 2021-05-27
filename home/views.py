@@ -1,3 +1,6 @@
+"""
+This function renders view of the index page
+"""
 from django.shortcuts import render
 
 # Create your views here.

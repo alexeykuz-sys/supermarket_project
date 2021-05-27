@@ -64,16 +64,10 @@
     {% block content %} 
     {%endblock %} 
     
-    {% block postloadjs %}
-      <script type="text/javascript">
-
-        $(document).ready(function(){
-          $('.toast').toast('show');
-        });
-       
-      </script>
-
-    {% endblock %}
-
   </body>
+  
+  {% block postloadjs %}
+  <script src="{% static 'js/script.js' %}"></script>
+
+  {% endblock %}
 </html>

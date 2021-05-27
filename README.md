@@ -28,11 +28,11 @@ A live version of the site is available [LIVE SITE](https://ms4-supermarket-proj
 8.  [Design Choices](https://github.com/alexeykuz-sys/supermarket_project#design-choices)
     
     -   [Fonts](https://github.com/alexeykuz-sys/supermarket_project#fonts)
-    -   [Icons](https://github.com/alexeykuz-sys/supermarket_project#icons)
     -   [Colours](https://github.com/alexeykuz-sys/supermarket_project#colours)
-    - [Database design](https://github.com/alexeykuz-sys/supermarket_project#database-design)
+    -   [Database design](https://github.com/alexeykuz-sys/supermarket_project#database-design)
     -   [Features and Future Releases](https://github.com/alexeykuz-sys/supermarket_project#features-and-future-releases)
     -   [Technologies used](https://github.com/alexeykuz-sys/supermarket_project#technologies-used)
+
 9.  [Manual Testing](https://github.com/alexeykuz-sys/supermarket_project#manual-testing)
     
 10.  [Testing User Stories](https://github.com/alexeykuz-sys/supermarket_project#testing-user-stories)
@@ -124,10 +124,6 @@ I have used Google Fonts to determine the best fonts suitable for each part of t
 I opted to use Lato font for my website, which is one of the most popular fonts used by major internet companies.
 
 [Top 10 Best Google Fonts](https://nestify.io/blog/top-10-best-google-fonts/)
-
-# [](https://github.com/alexeykuz-sys/supermarket_project#icons)Icons
-
-???????
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#colours)Colours
 
@@ -261,23 +257,17 @@ This page authenticates the user against those stored in the database. A verifie
 
 if a user has previously registered to the site they can insert their email address into the field and reset their password. An email is sent via smtp.gmail.com to the users email address. This functionality has been tested utilising multiple email addresses. The link in the email allows the user to create a new password and confirm. Once completed the user has to click button to be redirected back to the Login Page where they are able to login with thier email address or user name and password.This function has been rigorously tested.
 
-
-
-**Travis CI**
-
-Travis is utilised through the .travis.yml file to check the integrity of the code. Travis hooks up to Github and Heroku and allows the site owner to view detailed information on intricate production and backend information associated with the site. Any build errors will not pass and the resultant details will be sent to the site owner via email and displayed in the relevant Github page as build:failed.
-There are the options of the more detailed test to run but same needs to be learned.
-
 **AWS S3**
 
 The AWS S3 allows access to stored files within the site owners AWS bucket that are shared through the users AWS account. The testing of this functionality is shown in the availability of the stored data in the post prodution database andsite.
 
-**W3 Html Validator**??
+**W3 Html Validator**
 
-All .html were checked with the above validator.
+All .html files were checked with the above validator.
 
-**W3C CSS Validator**??
+**W3C CSS Validator**
 
+css was checked with css validator
 
 **PEP8 Online**
 

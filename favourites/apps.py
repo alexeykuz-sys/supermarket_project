@@ -1,3 +1,6 @@
+"""
+This register favourite app in apps
+"""
 from django.apps import AppConfig
 
 

@@ -1,5 +1,5 @@
 """
-This script allows user to create order model
+This script allows user to create order model in checkout
 """
 import uuid
 
