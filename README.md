@@ -375,7 +375,7 @@ To create virtual enviroment I followed the following steps:
 - Activate the virtual environment with venv\Scripts\activate.bat
 
 .Gitignore file was created, where i saved files that should not be pushed to Github:
-
+```
 core.Microsoft*
 core.mongo*
 core.python*
@@ -389,17 +389,17 @@ db.sqlite3
 *.pyc
 .env
 db.json
-
+```
 In addition dotenv was installed to store local variables to ensure safety of the passwords.
 
 The following variables were saved in venv file:
-
+```
 STRIPE_SECRET_KEY
 STRIPE_PUBLIC_KEY
 STRIPE_WH_SECRET
 SECRET_KEY  
 DEVELOPMENT
-
+```
 Install project requirements by typing pip install -r requirements.txt
 
 To deploy project and to run it locally, type python manage.py runserver in the terminal 
