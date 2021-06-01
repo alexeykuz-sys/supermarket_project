@@ -16,7 +16,6 @@
                             <a href="{% url 'products' %}" class="login-btn btn mt-5">{{user}}, Welcome to the Shop</a>
                             {% else %}
                             <a href="{% url 'account_login' %}" class="login-btn btn">Login</a>
-                            
                             <a class="register-link btn register-btn " href="{% url 'account_signup' %}">Register</a>
                         </div>
                         <a class="shop-link text-center mb-3" href="{% url 'products' %}">Browse the shop</a>

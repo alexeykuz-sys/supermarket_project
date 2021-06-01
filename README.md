@@ -627,9 +627,14 @@ Then to push to Heroku and we will see in the log that all static files were col
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#credits)Credits
 
+YouTube Channels:
+- Abhisheck Verma
+- Codemy.com
+- Dennis Ivy
+
 ### [](https://github.com/alexeykuz-sys/supermarket_project#images)Images
 
-The images for this app/website were taken from Unsplash:
+The images for this app/website were taken from:
 
 [Ocado Zoom](https://zoom.ocado.com/)
 
@@ -654,8 +659,5 @@ Sites used for information and support
 
 -   Oluwafemi Medale (mentor)
 -   Code Institute - Slack Community. (various students, tutors and mentors)
+- Thomas Muat - Code Institute alumni.
 
-<!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNzE5NTU3MTYsNzQ3MDM5MzcsLTE3NT
-M5NzYyNjAsODMxNjU3NTIzLC00MjI4MTc4NjRdfQ==
--->
