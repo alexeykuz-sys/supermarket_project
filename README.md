@@ -148,8 +148,9 @@ View my wireframes  [here](https://github.com/alexeykuz-sys/supermarket_project/
 Features to implement:
 
 -   To add time slots choice 
--   Sale items,
+-   Sale items
 -   Free delivery option
+-   Pagination
 
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#technologies-used)Technologies Used
@@ -345,7 +346,7 @@ Back to the shop button was tested and leads back to all products page.
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#bugs-and-debugging)Bugs and Debugging
 
-????
+No bugs were noted at the time of submission .  
 
 # [](https://github.com/alexeykuz-sys/supermarket_project#project-deployment)Project Deployment
 
